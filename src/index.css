@@ -1,0 +1,51 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --dark: 0 0% 3.9%;
+  }
+
+  body {
+    @apply 
+      bg-[#0A0A0A]    /* Ultra-dark background */
+      text-gray-300   /* Softer text color for readability */
+      selection:bg-gold/20   /* Subtle gold selection highlight */
+      selection:text-gold;
+  }
+}
+
+/* Page transition styles with more mysterious feel */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add a subtle glow effect for interactive elements */
+.glow-effect {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 15px rgba(162, 148, 102, 0.3);  /* Soft gold glow */
+}
