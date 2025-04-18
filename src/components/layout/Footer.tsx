@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0">
-            <p className="text-gold text-sm">&copy; {new Date().getFullYear()} – All Rights Reserved.</p>
+            <p className="text-purple-600 text-sm">&copy; {new Date().getFullYear()} – All Rights Reserved.</p>
           </div>
           
           <div className="flex items-center space-x-6">
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-gray-400 hover:text-gold transition-colors duration-300"
+              className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
             >
               <Github size={20} />
             </a>
@@ -27,14 +27,14 @@ const Footer: React.FC = () => {
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-gray-400 hover:text-gold transition-colors duration-300"
+              className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
             >
               <Linkedin size={20} />
             </a>
             <a 
               href="mailto:email@example.com" 
               aria-label="Email"
-              className="text-gray-400 hover:text-gold transition-colors duration-300"
+              className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
             >
               <Mail size={20} />
             </a>
@@ -44,17 +44,17 @@ const Footer: React.FC = () => {
             <nav>
               <ul className="flex space-x-6">
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-gold text-sm transition-colors duration-300">
+                  <Link to="/" className="text-gray-400 hover:text-purple-600 text-sm transition-colors duration-300">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="text-gray-400 hover:text-gold text-sm transition-colors duration-300">
+                  <Link to="/about" className="text-gray-400 hover:text-purple-600 text-sm transition-colors duration-300">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-gray-400 hover:text-gold text-sm transition-colors duration-300">
+                  <Link to="/contact" className="text-gray-400 hover:text-purple-600 text-sm transition-colors duration-300">
                     Contact
                   </Link>
                 </li>

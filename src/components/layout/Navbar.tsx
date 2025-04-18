@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold tracking-tight text-gold">
+          <Link to="/" className="text-xl font-bold tracking-tight text-purple-700">
             PORTFOLIO
           </Link>
           
@@ -55,13 +55,13 @@ const Navbar: React.FC = () => {
                   <Link
                     to={link.path}
                     className={`
-                      transition-all duration-300 hover:text-gold relative
-                      ${location.pathname === link.path ? 'text-gold' : 'text-gray-400'}
+                      transition-all duration-300 hover:text-purple relative
+                      ${location.pathname === link.path ? 'text-purple-500' : 'text-gray-400'}
                     `}
                   >
                     <span>{link.name}</span>
                     {location.pathname === link.path && (
-                      <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gold" />
+                      <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-500" />
                     )}
                   </Link>
                 </li>
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Navigation Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white hover:text-gold"
+            className="md:hidden text-white hover:text-purple-500"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,15 +82,15 @@ const Navbar: React.FC = () => {
       
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-dark-light border-t border-b border-gold/20 animate-fade-in">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-dark-light border-t border-b border-purple-900 animate-fade-in">
           <nav className="container mx-auto px-4 py-4">
             <ul className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className={`block py-2 px-4 transition-colors duration-300 hover:bg-dark-lighter hover:text-gold
-                      ${location.pathname === link.path ? 'text-gold border-l-2 border-gold pl-3' : 'text-gray-400'}
+                    className={`block py-2 px-4 transition-colors duration-300 hover:bg-dark-lighter hover:text-purple-600
+                      ${location.pathname === link.path ? 'text-purple-600 border-l-2 border-purple-600 pl-3' : 'text-gray-400'}
                     `}
                   >
                     {link.name}

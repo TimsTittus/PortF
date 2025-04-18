@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,26 +9,26 @@ const Home: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-12">
           <div className="lg:col-span-8 space-y-6">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              <span className="block text-gold mb-2">Hello, I'm</span>
-              <span className="block">Your Name</span>
+              <span className="block text-purple-600 mb-2" style={{ fontSize: '22px' }}>Hello, I'm</span>
+              <span className="block">Tims Tittus</span>
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400">
-              Developer & Designer
+              CyberSecurity Student & Ideal Generalist
             </h2>
             <p className="text-gray-400 max-w-2xl mt-6 text-lg">
-              I create elegant solutions through code and design, focusing on clean architecture and intuitive user experiences.
+            I craft elegant solutions through code and design—where structure meets intuition, and every detail serves a purpose.
             </p>
             <div className="pt-6 flex flex-wrap gap-4">
-              <Link 
-                to="/projects" 
-                className="inline-flex items-center px-6 py-3 bg-gold text-dark font-medium rounded hover:bg-gold-light transition-colors duration-300"
-              >
-                View My Work
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+            <Link 
+              to="/projects" 
+              className="inline-flex items-center px-6 py-3 bg-purple-600 text-dark font-medium rounded hover:bg-purple-600/80 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
+            >
+              View My Work
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
               <Link 
                 to="/contact" 
-                className="inline-flex items-center px-6 py-3 border border-gold text-gold font-medium rounded hover:bg-dark-light transition-colors duration-300"
+                className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded hover:bg-dark-light transition-colors hover:scale-105 hover:shadow-lg duration-300 ease-in-out"
               >
                 Get In Touch
               </Link>
@@ -37,9 +36,9 @@ const Home: React.FC = () => {
           </div>
           <div className="lg:col-span-4 hidden lg:block">
             <div className="relative">
-              <div className="w-full h-96 bg-dark-light rounded-lg border border-gold/20 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-gold/10">
-                  <span className="text-9xl font-bold">{'{}'}</span>
+              <div className="w-full h-96 bg-dark-light rounded-lg border border-purple-600/20 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center text-purple-600/10">
+                  <span className="text-9xl font-bold">{'{☯}'}</span>
                 </div>
               </div>
             </div>
@@ -47,7 +46,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      <section className="py-16 border-t border-gold/10">
+      <section className="py-16 border-t border-purple-600/10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Featured Projects</h2>
           <p className="text-gray-400">Some of my recent work</p>
@@ -57,10 +56,10 @@ const Home: React.FC = () => {
           {[1, 2, 3].map((item) => (
             <div 
               key={item} 
-              className="bg-dark-light border border-gold/10 rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-300 group"
+              className="bg-dark-light border border-purple-600/10 rounded-lg overflow-hidden hover:border-purple-600/30 transition-all duration-300 group"
             >
               <div className="h-48 bg-dark-lighter flex items-center justify-center">
-                <span className="text-5xl text-gold/20">Project {item}</span>
+                <span className="text-5xl text-purple-600/20">Project {item}</span>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Project Title {item}</h3>
@@ -72,7 +71,7 @@ const Home: React.FC = () => {
                 </div>
                 <Link 
                   to={`/projects/${item}`} 
-                  className="inline-flex items-center text-gold group-hover:text-gold-light transition-colors duration-300"
+                  className="inline-flex items-center text-purple-600 group-hover:text-purple-600/80 transition-colors duration-300"
                 >
                   View Project
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -85,7 +84,7 @@ const Home: React.FC = () => {
         <div className="text-center mt-10">
           <Link 
             to="/projects" 
-            className="inline-flex items-center px-6 py-3 border border-gold text-gold font-medium rounded hover:bg-dark-light transition-colors duration-300"
+            className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded hover:bg-dark-light transition-colors duration-300"
           >
             View All Projects
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -93,7 +92,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      <section className="py-16 border-t border-gold/10">
+      <section className="py-16 border-t border-purple-600/10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-2">Skills & Expertise</h2>
           <p className="text-gray-400">Technologies I work with</p>
@@ -106,9 +105,9 @@ const Home: React.FC = () => {
           ].map((skill) => (
             <div 
               key={skill} 
-              className="bg-dark-light border border-gold/10 rounded-lg p-6 text-center hover:border-gold/30 transition-all duration-300"
+              className="bg-dark-light border border-purple-600/10 rounded-lg p-6 text-center hover:border-purple-600/30 transition-all duration-300"
             >
-              <h3 className="text-lg font-medium text-gold mb-1">{skill}</h3>
+              <h3 className="text-lg font-medium text-purple-600 mb-1">{skill}</h3>
             </div>
           ))}
         </div>
