@@ -71,7 +71,7 @@ const Home: React.FC = () => {
                 </div>
                 <Link 
                   to={`/projects/${item}`} 
-                  className="inline-flex items-center text-purple-600 group-hover:text-purple-600/80 transition-colors duration-300"
+                  className="inline-flex items-center text-purple-600 group-hover:text-purple-600/80 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
                 >
                   View Project
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
         <div className="text-center mt-10">
           <Link 
             to="/projects" 
-            className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded hover:bg-dark-light transition-colors duration-300"
+            className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded hover:bg-dark-light hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
           >
             View All Projects
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -100,14 +100,13 @@ const Home: React.FC = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {[
-            'JavaScript', 'TypeScript', 'React', 'Node.js', 
-            'HTML/CSS', 'Tailwind CSS', 'UI/UX Design', 'GraphQL'
-          ].map((skill) => (
+            'Recon', 'Networking', 'React', 'Creative Designing', 
+            'Cybersecurity', 'Bug-Hunting', 'UI/UX Design', 'Leadership'
+            ].map((skill) => (
             <div 
               key={skill} 
-              className="bg-dark-light border border-purple-600/10 rounded-lg p-6 text-center hover:border-purple-600/30 transition-all duration-300"
-            >
-              <h3 className="text-lg font-medium text-purple-600 mb-1">{skill}</h3>
+              className="bg-dark-light border border-purple-600/10 rounded-lg p-6 text-center hover:border-purple-600/30 hover:bg-purple-950 hover:scale-105 hover:shadow-lg transition-all duration-500 ease-in-out"  >
+              <h3 className="text-lg font-medium text-purple-500 mb-1">{skill}</h3>
             </div>
           ))}
         </div>
