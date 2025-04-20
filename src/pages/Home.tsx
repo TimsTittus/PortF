@@ -56,7 +56,7 @@ const Home: React.FC = () => {
           {[1, 2, 3].map((item) => (
             <div 
               key={item} 
-              className="bg-dark-light border border-purple-600/10 rounded-lg overflow-hidden hover:border-purple-600/30 transition-all duration-300 group"
+              className="bg-dark-light border border-purple-600/10 rounded-lg overflow-hidden hover:border-purple-600/90 transition-all duration-300 group"
             >
               <div className="h-48 bg-dark-lighter flex items-center justify-center">
                 <span className="text-5xl text-purple-600/20">Project {item}</span>
