@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           
           <div className="flex items-center space-x-6">
             <a 
-              href="https://github.com" 
+              href="https://github.com/TimsTittus" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/tims-tittus/" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:email@example.com" 
+              href="timstittus1@gmail.com" 
               aria-label="Email"
               className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
             >
