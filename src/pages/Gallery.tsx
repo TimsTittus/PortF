@@ -2,7 +2,7 @@ import React from "react";
 
 const ResponsiveImageGallery = () => {
 return (
-    <div className="bg-black dark:bg-gray-800 py-6 sm:py-8 lg:py-12 min-h-screen">
+    <div className="bg-dark dark:bg-gray-800 py-6 sm:py-8 lg:py-12 min-h-screen">
     <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
         <div className="flex items-center gap-12">
