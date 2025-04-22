@@ -51,15 +51,15 @@ const About: React.FC = () => {
               <div>
                 <h2 className="text-purple-600 text-2xl font-bold mb-4">What I Do</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="p-6 bg-dark-light border border-purple-900 rounded-lg">
-                    <div className="w-12 h-12 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600 mb-4">
-                      <Code size={24} />
-                    </div>
+                <div className="p-6 bg-dark-light border border-purple-900 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-purple-950 hover:scale-105 hover:shadow-xl">
+                  <div className="w-12 h-12 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600 mb-4">
+                    <Code size={24} />
+                  </div>
                     <h3 className="text-purple-300 text-xl font-bold mb-2">Web Development</h3>
                     <p className="text-gray-400">Building responsive and optimized web applications using modern technologies and best practices.</p>
-                  </div>
-                  
-                  <div className="p-6 bg-dark-light border border-purple-900 rounded-lg">
+                  </div>  
+                                  
+                  <div className="p-6 bg-dark-light border border-purple-900 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-purple-950 hover:scale-105 hover:shadow-xl">
                     <div className="w-12 h-12 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600 mb-4">
                       <PenTool size={24} />
                     </div>
@@ -67,7 +67,7 @@ const About: React.FC = () => {
                     <p className="text-gray-400">Creating intuitive interfaces and meaningful user experiences that balance form and function.</p>
                   </div>
                   
-                  <div className="p-6 bg-dark-light border border-purple-900 rounded-lg">
+                  <div className="p-6 bg-dark-light border border-purple-900 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-purple-950 hover:scale-105 hover:shadow-xl">
                     <div className="w-12 h-12 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600 mb-4">
                       <Globe size={24} />
                     </div>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
                     <p className="text-gray-400">Securing systems through defense and ethical offense, identifying vulnerabilities, mitigating threats, and ensuring digital trust in an ever-evolving threat landscape.</p>
                   </div>
                   
-                  <div className="p-6 bg-dark-light border border-purple-900 rounded-lg">
+                  <div className="p-6 bg-dark-light border border-purple-900 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-purple-950 hover:scale-105 hover:shadow-xl">
                     <div className="w-12 h-12 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600 mb-4">
                       <Zap size={24} />
                     </div>
