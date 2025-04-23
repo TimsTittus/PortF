@@ -105,7 +105,7 @@ const Home: React.FC = () => {
             ].map((skill) => (
             <div 
               key={skill} 
-              className="bg-dark-light border border-purple-600/10 rounded-lg p-6 text-center hover:border-purple-600/30 hover:bg-purple-950 hover:scale-105 hover:shadow-lg transition-all duration-500 ease-in-out"  >
+              className="bg-dark-light border border-purple-600/10 rounded-lg p-6 text-center hover:border-purple-600/30 hover:bg-purple-950 hover:scale-105 hover:shadow-lg transition-all duration-400 ease-in-out"  >
               <h3 className="text-lg font-medium text-purple-500 mb-1">{skill}</h3>
             </div>
           ))}

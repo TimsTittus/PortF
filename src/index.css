@@ -12,14 +12,13 @@
 
   body {
     @apply 
-      bg-[#0A0A0A]    /* Ultra-dark background */
-      text-gray-300   /* Softer text color for readability */
-      selection:bg-gold/20   /* Subtle gold selection highlight */
+      bg-[#0A0A0A] 
+      text-gray-300   
+      selection:bg-gold/20   
       selection:text-gold;
   }
 }
 
-/* Page transition styles with more mysterious feel */
 .page-transition-enter {
   opacity: 0;
   transform: translateY(10px);
@@ -41,11 +40,24 @@
   transition: opacity 300ms, transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Add a subtle glow effect for interactive elements */
 .glow-effect {
   transition: box-shadow 0.3s ease;
 }
 
 .glow-effect:hover {
-  box-shadow: 0 0 15px rgba(162, 148, 102, 0.3);  /* Soft gold glow */
+  box-shadow: 0 0 15px rgba(162, 148, 102, 0.3);
+}
+
+:root {
+  --x: 0.5;
+  --y: 0.5;
+}
+
+.interactive-gradient {
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(44, 27, 83, 0.4),
+    #0f0f0f 22%
+  );
+  will-change: background;
 }
