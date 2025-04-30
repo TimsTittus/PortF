@@ -56,7 +56,7 @@
 .interactive-gradient {
   background: radial-gradient(
     circle at var(--x, 50%) var(--y, 50%),
-    rgba(44, 27, 83, 0.4),
+    rgba(61, 36, 118, 0.4),
     #0f0f0f 22%
   );
   will-change: background;

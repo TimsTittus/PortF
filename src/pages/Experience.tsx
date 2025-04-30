@@ -2,7 +2,6 @@
 import React from 'react';
 import { Building, Calendar, Award, BookOpen } from 'lucide-react';
 
-// Work experience data
 const workExperience = [
   {
     id: 1,
@@ -45,7 +44,6 @@ const workExperience = [
   }
 ];
 
-// Skills data
 const skills = {
   technical: [
     { name: 'JavaScript', level: 90 },
@@ -83,7 +81,7 @@ const Experience: React.FC = () => {
         
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Building className="mr-2 text-gold" />
+            <Building className="mr-2 text-purple-600" />
             Work Experience
           </h2>
           
@@ -100,7 +98,7 @@ const Experience: React.FC = () => {
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   <div className="md:w-1/3">
                     <h3 className="text-xl font-bold">{job.title}</h3>
-                    <div className="flex items-center text-gold mt-1">
+                    <div className="flex items-center text-purple-600 mt-1">
                       <Building size={16} className="mr-1" />
                       <span>{job.company}</span>
                     </div>
@@ -127,7 +125,7 @@ const Experience: React.FC = () => {
         
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Award className="mr-2 text-gold" />
+            <Award className="mr-2 text-purple-600" />
             Skills & Expertise
           </h2>
           
@@ -139,11 +137,11 @@ const Experience: React.FC = () => {
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">
                       <span>{skill.name}</span>
-                      <span className="text-gold">{skill.level}%</span>
+                      <span className="text-purple-600">{skill.level}%</span>
                     </div>
                     <div className="h-2 bg-dark-lighter rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-gold"
+                        className="h-full bg-purple-400"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -159,11 +157,11 @@ const Experience: React.FC = () => {
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">
                       <span>{skill.name}</span>
-                      <span className="text-gold">{skill.level}%</span>
+                      <span className="text-purple-600">{skill.level}%</span>
                     </div>
                     <div className="h-2 bg-dark-lighter rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-gold"
+                        className="h-full bg-purple-400"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -177,11 +175,11 @@ const Experience: React.FC = () => {
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">
                       <span>{skill.name}</span>
-                      <span className="text-gold">{skill.level}%</span>
+                      <span className="text-purple-600">{skill.level}%</span>
                     </div>
                     <div className="h-2 bg-dark-lighter rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-gold"
+                        className="h-full bg-purple-400"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -194,14 +192,14 @@ const Experience: React.FC = () => {
         
         <div>
           <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <BookOpen className="mr-2 text-gold" />
+            <BookOpen className="mr-2 text-purple-600" />
             Education & Certifications
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
               <h3 className="text-xl font-bold">BSc in Computer Science</h3>
-              <p className="text-gold">University Name • 2015-2019</p>
+              <p className="text-purple-600">University Name • 2015-2019</p>
               <p className="text-gray-400 mt-2">
                 Studied algorithms, data structures, software engineering principles, and UI/UX design fundamentals.
               </p>
@@ -209,7 +207,7 @@ const Experience: React.FC = () => {
             
             <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
               <h3 className="text-xl font-bold">Frontend Web Development Certification</h3>
-              <p className="text-gold">Tech Academy • 2020</p>
+              <p className="text-purple-600">Tech Academy • 2020</p>
               <p className="text-gray-400 mt-2">
                 Advanced training in modern JavaScript frameworks, responsive design, and web performance optimization.
               </p>
@@ -217,7 +215,7 @@ const Experience: React.FC = () => {
             
             <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
               <h3 className="text-xl font-bold">UI/UX Design Professional Certificate</h3>
-              <p className="text-gold">Design Institute • 2021</p>
+              <p className="text-purple-600">Design Institute • 2021</p>
               <p className="text-gray-400 mt-2">
                 Comprehensive training in user research, information architecture, interaction design, and prototyping.
               </p>
@@ -225,7 +223,7 @@ const Experience: React.FC = () => {
             
             <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
               <h3 className="text-xl font-bold">Certified Scrum Master</h3>
-              <p className="text-gold">Scrum Alliance • 2022</p>
+              <p className="text-purple-600">Scrum Alliance • 2022</p>
               <p className="text-gray-400 mt-2">
                 Certification in agile methodologies, team facilitation, and iterative development processes.
               </p>

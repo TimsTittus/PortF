@@ -30,7 +30,6 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       toast.success('Message sent! I\'ll get back to you soon.');
       setFormData(initialFormState);
