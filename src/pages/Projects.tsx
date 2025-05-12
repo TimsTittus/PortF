@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// Sample project data
 const projects = [
   {
     id: 1,
@@ -79,7 +78,6 @@ const projects = [
   }
 ];
 
-// Filter categories
 const categories = [
   'All',
   ...new Set(projects.flatMap(project => project.tags)).values()
@@ -109,8 +107,8 @@ const Projects: React.FC = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
                 activeFilter === category
-                  ? 'bg-gold text-dark'
-                  : 'bg-dark-light text-gray-400 hover:text-white hover:bg-dark-lighter'
+                  ? 'bg-purple-700 text-dark border-purple-700'
+                  : 'bg-dark-light text-gray-400 hover:text-purple-400 hover:bg-dark-lighter hover:scale-110 hover:border-purple-700'
               }`}
             >
               {category}
