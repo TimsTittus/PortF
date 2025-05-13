@@ -31,11 +31,12 @@ const Home: React.FC = () => {
               </Link>
 
               <Link 
-                to="/contact" 
-                className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded hover:bg-dark-light transition-colors hover:scale-105 hover:shadow-lg duration-300 ease-in-out"
-              >
+                  to="/contact" 
+                  className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded-full hover:bg-dark-light transition-colors hover:scale-105 hover:shadow-lg duration-300 ease-in-out"
+                  >
                 Get In Touch
               </Link>
+
             </div>
           </div>
           <div className="lg:col-span-4 hidden lg:block">
