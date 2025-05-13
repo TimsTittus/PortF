@@ -19,13 +19,17 @@ const Home: React.FC = () => {
             I craft elegant solutions through code and design—where structure meets intuition, and every detail serves a purpose.
             </p>
             <div className="pt-6 flex flex-wrap gap-4">
-            <Link 
-              to="/projects" 
-              className="inline-flex items-center px-6 py-3 bg-purple-600 text-dark font-medium rounded hover:bg-purple-600/80 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
-            >
-              View My Work
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            <Link to="/projects" className="animated-button">
+              <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+              </svg>
+              <span className="text">View my work</span>
+              <span className="circle"></span>
+              <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+                </svg>
+              </Link>
+
               <Link 
                 to="/contact" 
                 className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded hover:bg-dark-light transition-colors hover:scale-105 hover:shadow-lg duration-300 ease-in-out"
