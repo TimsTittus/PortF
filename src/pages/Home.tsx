@@ -30,11 +30,8 @@ const Home: React.FC = () => {
                 </svg>
               </Link>
 
-              <Link 
-                  to="/contact" 
-                  className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded-full hover:bg-dark-light transition-colors hover:scale-105 hover:shadow-lg duration-300 ease-in-out"
-                  >
-                Get In Touch
+              <Link to="/contact">
+                <button className="boton-elegante">Get in touch</button>
               </Link>
 
             </div>
