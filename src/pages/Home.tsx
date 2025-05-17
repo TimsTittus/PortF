@@ -19,20 +19,31 @@ const Home: React.FC = () => {
             I craft elegant solutions through code and design—where structure meets intuition, and every detail serves a purpose.
             </p>
             <div className="pt-6 flex flex-wrap gap-4">
-            <Link to="/projects" className="animated-button">
-              <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
-              </svg>
-              <span className="text">View my work</span>
-              <span className="circle"></span>
-              <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+            <div className="flex items-center gap-4 flex-wrap">
+              <Link to="/projects" className="animated-button">
+                <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+                </svg>
+                <span className="text">View my work</span>
+                <span className="circle"></span>
+                <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
                 </svg>
               </Link>
 
               <Link to="/contact">
-                <button className="boton-elegante">Get in touch</button>
+                <button className="button flex items-center gap-2">
+                  Get in touch
+                  <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      fillRule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
               </Link>
+            </div>
 
             </div>
           </div>
