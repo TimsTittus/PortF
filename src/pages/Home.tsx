@@ -10,7 +10,7 @@ const Home: React.FC = () => {
           <div className="lg:col-span-8 space-y-6">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
               <span className="block text-purple-600 mb-2" style={{ fontSize: '22px' }}>Hello, I'm</span>
-              <span className="btn-shine">Tims Tittus</span>
+              <span className="btn -shine">Tims Tittus</span>
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400">
               CyberSecurity Student & Ideal Generalist
@@ -47,15 +47,19 @@ const Home: React.FC = () => {
 
             </div>
           </div>
-          <div className="lg:col-span-4 hidden lg:block">
+          {/*(<div className="lg:col-span-4 hidden lg:block">
             <div className="relative">
               <div className="w-full h-96 bg-dark-light rounded-lg border border-purple-600/20 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-purple-600/10">
-                  <span className="text-9xl font-bold">{'{☯}'}</span>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="/assets/hiddenimage.png"
+                    alt="Background"
+                    className="w-full h-full object-cover opacity-90"
+                  />
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
         </div>
       </section>
       
