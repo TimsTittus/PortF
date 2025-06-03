@@ -98,14 +98,19 @@ const Home: React.FC = () => {
           ))}
         </div>
         
-        <div className="text-center mt-10">
-          <Link 
-            to="/projects" 
-            className="inline-flex items-center px-6 py-3 border border-purple-600 text-purple-600 font-medium rounded hover:bg-dark-light hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
-          >
-            View All Projects
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+        <div className="mt-10 flex justify-center">
+          <Link to="/projects">
+                <button className="button flex items-center gap-2">
+                  View All Projects
+                  <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      fillRule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+              </Link>
         </div>
       </section>
       
