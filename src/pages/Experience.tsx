@@ -5,14 +5,15 @@ import { Building, Calendar, Award, BookOpen } from 'lucide-react';
 const workExperience = [
   {
     id: 1,
-    title: 'Senior Frontend Developer',
-    company: 'Tech Solutions Inc',
-    period: 'Jan 2022 - Present',
-    description: 'Leading the development of the company\'s main product, managing a team of 3 developers, and implementing new features and improvements.',
+    title: 'Web Master',
+    company: 'IEEE SB SJCET',
+    period: 'April 2025 - Present',
+    description: 'Oversee the maintenance, design, and functionality of the IEEE SB SJCET website to enhance member engagement and promote events.',
     responsibilities: [
-      'Architected and developed responsive, accessible web applications using React, TypeScript, and Tailwind CSS',
-      'Implemented state management solutions using Redux and Context API',
-      'Optimized application performance leading to a 40% improvement in load times',
+      'Updated IEEE SB SJCET website with timely event details and content',
+      'Resolved website and tech issues, ensuring optimal IEEE SB SJCET performance',
+      'Designed user-friendly web pages for enhanced accessibility and engagement',
+      'Improved application performance, reducing load times by 40%',
       'Mentored junior developers and conducted code reviews'
     ]
   },
