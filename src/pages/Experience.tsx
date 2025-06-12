@@ -19,15 +19,14 @@ const workExperience = [
   },
   {
     id: 2,
-    title: 'UI/UX Developer',
-    company: 'Creative Agency',
-    period: 'Mar 2020 - Dec 2021',
-    description: 'Collaborated with designers and developers to create intuitive user interfaces and seamless user experiences for various client projects.',
+    title: 'College Lead',
+    company: 'HackTheBox Kerala',
+    period: 'Mar 2025 - Present',
+    description: 'Manage cybersecurity events, including CTFs and workshops, to build ethical hacking skills and promote awareness with HackTheBox Kerala.',
     responsibilities: [
-      'Translated design mockups into responsive, pixel-perfect interfaces',
-      'Conducted user research and usability testing to identify pain points',
-      'Created interactive prototypes and design systems',
-      'Worked directly with clients to gather requirements and present solutions'
+      'Manage cybersecurity activities and encourage hacking skills on campus',
+      'Run CTFs, workshops, and practical sessions to build ethical hacking skills',
+      'Work with HackTheBox Kerala to raise cybersecurity awareness'
     ]
   },
   {
