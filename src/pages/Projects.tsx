@@ -120,12 +120,12 @@ const Projects: React.FC = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-dark-light border border-gold/10 rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-300 group"
+              className="bg-dark-light border border-purple-900/60 rounded-lg overflow-hidden hover:border-purple-700 transition-all duration-300 group"
             >
               <div className="h-48 bg-dark-lighter flex items-center justify-center relative overflow-hidden">
                 <span className="text-5xl text-gold/20">{project.image}</span>
                 {project.featured && (
-                  <span className="absolute top-3 right-3 bg-gold text-dark px-2 py-1 text-xs font-bold rounded">
+                  <span className="absolute top-3 right-3 bg-purple-600 text-dark px-2 py-1 text-xs font-bold rounded">
                     Featured
                   </span>
                 )}
@@ -146,7 +146,7 @@ const Projects: React.FC = () => {
                 <div className="flex items-center justify-between">
                   <Link 
                     to={`/projects/${project.id}`} 
-                    className="inline-flex items-center text-gold group-hover:text-gold-light transition-colors duration-300"
+                    className="inline-flex items-center text-purple-600 group-hover:text-purple-300 transition-colors duration-300"
                   >
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -157,7 +157,7 @@ const Projects: React.FC = () => {
                       href={project.links.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-gold transition-colors duration-300"
+                      className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
                       aria-label="GitHub repository"
                     >
                       <Github size={18} />
@@ -166,7 +166,7 @@ const Projects: React.FC = () => {
                       href={project.links.live} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-gold transition-colors duration-300"
+                      className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
                       aria-label="Live project"
                     >
                       <ExternalLink size={18} />
