@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 import { toast } from 'sonner';
@@ -20,23 +19,36 @@ const initialFormState: FormState = {
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormState>(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    setTimeout(() => {
-      toast.success('Message sent! I\'ll get back to you soon.');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) throw new Error('Failed to send message');
+
+      toast.success("Message sent! I'll get back to you soon.");
       setFormData(initialFormState);
+    } catch (err) {
+      toast.error('Something went wrong. Please try again later.');
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
-  
+
   return (
     <div className="container mx-auto max-w-6xl">
       <section className="py-12">
@@ -46,15 +58,13 @@ const Contact: React.FC = () => {
             Feel free to reach out if you have any questions, project inquiries, or just want to say hello.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block mb-2 text-sm font-medium">
-                    Your Name
-                  </label>
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium">Your Name</label>
                   <input
                     type="text"
                     id="name"
@@ -66,11 +76,8 @@ const Contact: React.FC = () => {
                     placeholder="Enter your name"
                   />
                 </div>
-                
                 <div>
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium">
-                    Your Email
-                  </label>
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium">Your Email</label>
                   <input
                     type="email"
                     id="email"
@@ -83,11 +90,9 @@ const Contact: React.FC = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label htmlFor="subject" className="block mb-2 text-sm font-medium">
-                  Subject
-                </label>
+                <label htmlFor="subject" className="block mb-2 text-sm font-medium">Subject</label>
                 <input
                   type="text"
                   id="subject"
@@ -99,11 +104,9 @@ const Contact: React.FC = () => {
                   placeholder="Project Inquiry"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="message" className="block mb-2 text-sm font-medium">
-                  Message
-                </label>
+                <label htmlFor="message" className="block mb-2 text-sm font-medium">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -115,14 +118,12 @@ const Contact: React.FC = () => {
                   placeholder="Your message here..."
                 />
               </div>
-              
+
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className={`inline-flex items-center px-6 py-3 ${
-                  isSubmitting 
-                    ? 'bg-purple-950 cursor-not-allowed' 
-                    : 'bg-purple-800 hover:bg-purple-500'
+                  isSubmitting ? 'bg-purple-950 cursor-not-allowed' : 'bg-purple-800 hover:bg-purple-500'
                 } text-dark font-medium rounded transition-colors duration-300`}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -130,11 +131,10 @@ const Contact: React.FC = () => {
               </button>
             </form>
           </div>
-          
+
           <div className="lg:col-span-2">
             <div className="p-6 bg-dark-light border border-purple-950 rounded-lg h-full">
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
@@ -142,55 +142,41 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-medium">Email</h3>
-                    <a 
-                      href="mailto:timstittus1@gmail.com" 
-                      className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                    >
+                    <a href="mailto:timstittus1@gmail.com" className="text-gray-400 hover:text-purple-600 transition-colors duration-300">
                       timstittus1@gmail.com
                     </a>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
                     <Phone size={20} />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-medium">Phone</h3>
-                    <a 
-                      href="tel:+91 9946116910" 
-                      className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                    >
+                    <a href="tel:+91 9946116910" className="text-gray-400 hover:text-purple-600 transition-colors duration-300">
                       +91 9946116910
                     </a>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
                     <MapPin size={20} />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-medium">Location</h3>
-                    <p className="text-gray-400">
-                      Cherupuzha(PO), Kannur(DIST), Kerala, India
-                    </p>
+                    <p className="text-gray-400">Cherupuzha(PO), Kannur(DIST), Kerala, India</p>
                   </div>
                 </div>
-                
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
                     <Clock size={20} />
                   </div>
                   <div className="ml-4">
                     <h3 className="font-medium">Working Hours</h3>
-                    <p className="text-gray-400">
-                      Mon - Fri: 9:00 AM - 5:00 PM
-                    </p>
+                    <p className="text-gray-400">Mon - Fri: 9:00 AM - 5:00 PM</p>
                   </div>
                 </div>
               </div>
-              
               <div className="mt-8 pt-8 border-t border-gold/10">
                 <h3 className="font-medium mb-4">Connect With Me</h3>
                 <div className="flex space-x-4">
@@ -238,6 +224,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
+
         </div>
       </section>
     </div>
