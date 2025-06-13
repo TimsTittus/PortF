@@ -21,9 +21,9 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const { name, value } = e.target;
+  setFormData(prev => ({ ...prev, [name]: value }));
+};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,6 +71,7 @@ const Contact: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    autoComplete="off"
                     required
                     className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300"
                     placeholder="Enter your name"
@@ -84,6 +85,7 @@ const Contact: React.FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    autoComplete="off"
                     required
                     className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300"
                     placeholder="example@example.com"
@@ -99,6 +101,7 @@ const Contact: React.FC = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
+                  autoComplete="off"
                   required
                   className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300"
                   placeholder="Project Inquiry"
@@ -112,6 +115,7 @@ const Contact: React.FC = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  autoComplete="off"
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300 resize-none"
