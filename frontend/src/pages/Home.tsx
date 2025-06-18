@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ExternalLink, Github } from 'lucide-react';
+import { projects } from '../data/projects';
 
 const Home: React.FC = () => {
   return (
@@ -65,39 +67,67 @@ const Home: React.FC = () => {
       
       <section className="py-16 border-t border-purple-600/10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Featured Projects</h2>
-          <p className="text-gray-400">Some of my recent work</p>
-        </div>
-        
+  <h2 className="text-3xl font-bold mb-2">Featured Projects</h2>
+  <p className="text-gray-400">Some of my recent work</p>
+</div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((item) => (
-            <div 
-              key={item} 
-              className="bg-dark-light border border-purple-600/10 rounded-lg overflow-hidden hover:border-purple-600/90 transition-all duration-300 group"
-            >
-              <div className="h-48 bg-dark-lighter flex items-center justify-center">
-                <span className="text-5xl text-purple-600/20">Project {item}</span>
+          {projects.filter(project => project.featured)
+            .map((project) => (
+              <div
+                key={project.id}
+                className="bg-dark-light border border-purple-600/10 rounded-lg overflow-hidden hover:border-purple-600/90 transition-all duration-300 group"
+              >
+                <div className="h-48 bg-dark-lighter flex items-center justify-center relative overflow-hidden">
+                <span className="text-5xl text-gold/20">{project.image}</span>
+                {project.featured && (
+                  <span className="absolute top-3 right-3 bg-purple-600 text-dark px-2 py-1 text-xs font-bold rounded">
+                    Featured
+                  </span>
+                )}
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Project Title {item}</h3>
-                <p className="text-gray-400 mb-4">Short description of the project and the technologies used.</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 text-xs bg-dark rounded text-gray-400">React</span>
-                  <span className="px-3 py-1 text-xs bg-dark rounded text-gray-400">TypeScript</span>
-                  <span className="px-3 py-1 text-xs bg-dark rounded text-gray-400">Tailwind</span>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map(tag => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-xs bg-dark rounded text-gray-400"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    {project.links.github && (
+                      <a 
+                        href={project.links.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
+                        aria-label="GitHub repository"
+                      >
+                        <Github size={18} />
+                      </a>
+                    )}
+                    {project.links.live && (
+                      <a 
+                        href={project.links.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
+                        aria-label="Live project"
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <Link 
-                  to={`/projects/${item}`} 
-                  className="inline-flex items-center text-purple-600 group-hover:text-purple-600/80 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
-                >
-                  View Project
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
-        
+ 
         <div className="mt-10 flex justify-center">
           <Link to="/projects">
                 <button className="button flex items-center gap-2">

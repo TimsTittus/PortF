@@ -1,78 +1,53 @@
 
 import React, { useState } from 'react';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, TrendingUpDownIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const projects = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    description: 'A fully responsive e-commerce platform with product filtering, cart functionality, and secure checkout process.',
+    title: 'Portfolio Website',
+    description: 'A minimalist portfolio website crafted to highlight my technical projects and creative work.',
     image: 'project1',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    tags: ['HTML/CSS', 'React', 'Vite', 'JavaScript'],
     links: {
-      live: '#',
-      github: '#'
+      live: 'https://github.com/TimsTittus/PortF',
+      github: 'https://github.com/TimsTittus/PortF'
     },
     featured: true
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, drag and drop interface, and team collaboration features.',
+    title: 'Steg Tool',
+    description: 'A steganography tool that allows you to hide and extract messages within images.',
     image: 'project2',
-    tags: ['React', 'Firebase', 'Tailwind CSS', 'Redux'],
+    tags: ['Python', 'Crytpgraphy', 'Streamlit'],
     links: {
-      live: '#',
-      github: '#'
+      live: 'https://steg-it.streamlit.app/',
+      github: 'https://github.com/TimsTittus/Steg_Tool'
     },
-    featured: true
+    featured: false
   },
   {
     id: 3,
-    title: 'Portfolio Website',
-    description: 'A minimalist portfolio website designed to showcase creative work with a focus on typography and whitespace.',
+    title: 'Parking Mangement System',
+    description: 'Helps us to enter, display or alter the details of vehicles in parking records.',
     image: 'project3',
-    tags: ['HTML/CSS', 'JavaScript', 'GSAP'],
+    tags: ['Python','MySQL'],
     links: {
-      live: '#',
-      github: '#'
+      github: 'https://github.com/TimsTittus/Parking-Management-System'
     },
-    featured: true
+    featured: false
   },
   {
     id: 4,
-    title: 'Weather Dashboard',
-    description: 'An interactive weather dashboard with 7-day forecasts, location-based weather data, and customizable units.',
-    image: 'project4',
-    tags: ['React', 'TypeScript', 'OpenWeather API'],
+    title: 'Sjcet Events',
+    description: 'Contributed to this platform for managing and viewing events happening at SJCET',
+    image: 'project3',
+    tags: ['HTML/CSS','JavaScript','Vue'],
     links: {
-      live: '#',
-      github: '#'
-    },
-    featured: false
-  },
-  {
-    id: 5,
-    title: 'Recipe Finder',
-    description: 'A recipe search application that allows users to find recipes based on ingredients, dietary restrictions, and meal types.',
-    image: 'project5',
-    tags: ['React', 'API Integration', 'Styled Components'],
-    links: {
-      live: '#',
-      github: '#'
-    },
-    featured: false
-  },
-  {
-    id: 6,
-    title: 'Fitness Tracker',
-    description: 'A comprehensive fitness tracking application with workout planning, progress visualization, and social sharing features.',
-    image: 'project6',
-    tags: ['React Native', 'Firebase', 'Chart.js'],
-    links: {
-      live: '#',
-      github: '#'
+      live: 'https://sjcet-events.vercel.app/',
+      github: 'https://github.com/TimsTittus/Sjcet-Events'
     },
     featured: false
   }
@@ -142,8 +117,9 @@ const Projects: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                
+ 
                 <div className="flex items-center justify-between">
+                {/*
                   <Link 
                     to={`/projects/${project.id}`} 
                     className="inline-flex items-center text-purple-600 group-hover:text-purple-300 transition-colors duration-300"
@@ -151,7 +127,7 @@ const Projects: React.FC = () => {
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
-                  
+                  */}
                   <div className="flex items-center space-x-4">
                     <a 
                       href={project.links.github} 
