@@ -19,9 +19,37 @@ const workExperience = [
   },
   {
     id: 2,
+    title: 'IPR & Research Lead',
+    company: 'Startup Bootcamp SJCET – IEDC',
+    period: 'January 2025 – Present',
+    description: 'Lead IP and research efforts to support student-led innovations and startup initiatives within SJCET’s Startup Bootcamp.',
+    responsibilities: [
+      'Guided teams in patent drafting, prior art searches, and technical documentation',
+      'Organized IP awareness programs and research workshops for students',
+      'Promoted a culture of innovation through structured IP support systems',
+      'Collaborated with faculty and experts to offer research mentorship',
+      'Facilitated technology disclosures and supported filing processes'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Assistant Network Technician',
+    company: 'ITTA Cable Network – Kozhichal, Kannur',
+    period: 'February 2022 – August 2024',
+    description: 'Managed and optimized fiber network infrastructure, ensuring reliable connectivity, automation, and cross-functional collaboration.',
+    responsibilities: [
+      'Configured and optimized OLTs, routers, and fiber networks for improved performance',
+      'Automated routine tasks using scripting and SQL tools to enhance operational efficiency',
+      'Designed and deployed scalable network solutions with strong security protocols',
+      'Reduced downtime through advanced troubleshooting and proactive maintenance',
+      'Documented network architectures and provided technical training to support teams'
+    ]
+  },
+  {
+    id: 4,
     title: 'College Lead',
     company: 'HackTheBox Kerala',
-    period: 'Mar 2025 - Present',
+    period: 'Mar 2025 - June 2025',
     description: 'Manage cybersecurity events, including CTFs and workshops, to build ethical hacking skills and promote awareness with HackTheBox Kerala.',
     responsibilities: [
       'Manage cybersecurity activities and encourage hacking skills on campus',
@@ -30,16 +58,42 @@ const workExperience = [
     ]
   },
   {
-    id: 3,
-    title: 'Frontend Developer',
-    company: 'Startup Innovations',
-    period: 'Jun 2018 - Feb 2020',
-    description: 'Worked on building and maintaining the company\'s web application, focusing on frontend functionality and user interface improvements.',
+    id: 5,
+    title: 'Cyber Lead, Core Team Member',
+    company: 'The Nexus Project (FOSS Club)',
+    period: 'November 2024 – Present',
+    description: 'Support open-source initiatives and cybersecurity activities through events, workshops, and community collaboration at The Nexus Project.',
     responsibilities: [
-      'Developed and maintained client-side applications using JavaScript, HTML, and CSS',
-      'Collaborated with backend developers to integrate APIs and ensure data consistency',
-      'Implemented responsive designs and ensured cross-browser compatibility',
-      'Participated in agile development processes including sprint planning and retrospectives'
+      'Organized FOSS workshops and technical sessions promoting open-source culture',
+      'Collaborated with peers to plan and execute college-wide tech activities',
+      'Mentored juniors on Git, version control, and secure coding practices',
+      'Helped grow community engagement and participation in open-source projects'
+    ]
+  },
+  {
+    id: 6,
+    title: 'Vice-Chairperson',
+    company: 'IEEE SIGHT SB SJCET',
+    period: 'April 2025 – Present',
+    description: 'Support planning and execution of community outreach and social impact projects under IEEE SIGHT, fostering collaboration and awareness.',
+    responsibilities: [
+      'Assisted in organizing and managing IEEE SIGHT community initiatives',
+      'Promoted IEEE SIGHT goals through events and awareness campaigns',
+      'Planned outreach programs focused on sustainable and impactful solutions',
+      'Coordinated with internal teams and external partners for seamless execution'
+    ]
+  },
+  {
+    id: 7,
+    title: 'Graphic Designer',
+    company: 'IEEE SB SJCET',
+    period: 'May 2024 – March 2025',
+    description: 'Created engaging visual content for IEEE SB SJCET events and initiatives while maintaining brand consistency and timely delivery.',
+    responsibilities: [
+      'Designed event posters, social media graphics, and promotional materials',
+      'Used Figma, Photoshop, and Illustrator to produce high-quality visuals',
+      'Ensured compliance with IEEE branding guidelines across all designs',
+      'Collaborated with event teams to deliver assets on schedule'
     ]
   }
 ];
