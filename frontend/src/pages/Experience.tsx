@@ -252,36 +252,22 @@ const Experience: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
-              <h3 className="text-xl font-bold">BSc in Computer Science</h3>
-              <p className="text-purple-600">University Name • 2015-2019</p>
+              <h3 className="text-xl font-bold">BTech in ComputerScience & Engineering(Cybersecurity)</h3>
+              <p className="text-purple-600">SJCET Palai • 2023-2027</p>
               <p className="text-gray-400 mt-2">
-                Studied algorithms, data structures, software engineering principles, and UI/UX design fundamentals.
+                Specialized in cybersecurity, including ethical hacking, network security, cryptography, and secure software design.
+                Developed expertise in algorithms, data structures, and software engineering principles, while gaining hands-on experience in vulnerability analysis, penetration testing, and defense strategies.
               </p>
             </div>
-            
+
             <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
-              <h3 className="text-xl font-bold">Frontend Web Development Certification</h3>
-              <p className="text-purple-600">Tech Academy • 2020</p>
+              <h3 className="text-xl font-bold">Pursuing Minor Degree in Robotics & Automation</h3>
+              <p className="text-purple-600">SJCET Palai • 2023-2027</p>
               <p className="text-gray-400 mt-2">
-                Advanced training in modern JavaScript frameworks, responsive design, and web performance optimization.
+                Specialized in robotics and automation, including robotic system design, control algorithms, sensor integration, and autonomous navigation.
               </p>
             </div>
-            
-            <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
-              <h3 className="text-xl font-bold">UI/UX Design Professional Certificate</h3>
-              <p className="text-purple-600">Design Institute • 2021</p>
-              <p className="text-gray-400 mt-2">
-                Comprehensive training in user research, information architecture, interaction design, and prototyping.
-              </p>
-            </div>
-            
-            <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
-              <h3 className="text-xl font-bold">Certified Scrum Master</h3>
-              <p className="text-purple-600">Scrum Alliance • 2022</p>
-              <p className="text-gray-400 mt-2">
-                Certification in agile methodologies, team facilitation, and iterative development processes.
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
