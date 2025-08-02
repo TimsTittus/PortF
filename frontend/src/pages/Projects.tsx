@@ -6,33 +6,21 @@ import { Link } from 'react-router-dom';
 const projects = [
   {
     id: 1,
-    title: 'Portfolio Website',
-    description: 'A minimalist portfolio website crafted to highlight my technical projects and creative work.',
-    image: 'project1',
-    tags: ['HTML/CSS', 'React', 'Vite', 'JavaScript'],
-    links: {
-      live: 'https://github.com/TimsTittus/PortF',
-      github: 'https://github.com/TimsTittus/PortF'
-    },
-    featured: true
-  },
-  {
-    id: 2,
     title: 'Steg Tool',
     description: 'A steganography tool that allows you to hide and extract messages within images.',
-    image: 'project2',
+    image: '1',
     tags: ['Python', 'Crytpgraphy', 'Streamlit'],
     links: {
       live: 'https://steg-it.streamlit.app/',
       github: 'https://github.com/TimsTittus/Steg_Tool'
     },
-    featured: false
+    featured: true
   },
   {
-    id: 3,
+    id: 2,
     title: 'Parking Mangement System',
     description: 'Helps us to enter, display or alter the details of vehicles in parking records.',
-    image: 'project3',
+    image: '2',
     tags: ['Python','MySQL'],
     links: {
       github: 'https://github.com/TimsTittus/Parking-Management-System'
@@ -40,16 +28,28 @@ const projects = [
     featured: false
   },
   {
-    id: 4,
+    id: 3,
     title: 'Sjcet Events',
     description: 'Contributed to this platform for managing and viewing events happening at SJCET',
-    image: 'project3',
+    image: '3',
     tags: ['HTML/CSS','JavaScript','Vue'],
     links: {
       live: 'https://sjcet-events.vercel.app/',
       github: 'https://github.com/TimsTittus/Sjcet-Events'
     },
     featured: false
+  },
+  {
+    id: 4,
+    title: 'Portfolio Website',
+    description: 'A minimalist portfolio website crafted to highlight my technical projects and creative work.',
+    image: '4',
+    tags: ['HTML/CSS', 'React', 'Vite', 'JavaScript'],
+    links: {
+      live: 'https://github.com/TimsTittus/PortF',
+      github: 'https://github.com/TimsTittus/PortF'
+    },
+    featured: true
   }
 ];
 
