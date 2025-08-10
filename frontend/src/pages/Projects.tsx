@@ -18,9 +18,32 @@ const projects = [
   },
   {
     id: 2,
+    title: 'HomeChime',
+    description: 'Browser based app that, inspired by my family’s anxious wait for my younger brother’s school bus.',
+    image: '2',
+    tags: ['HTML/CSS', 'JavaScript'],
+    links: {
+      live: 'https://homechime.vercel.app/',
+      github: 'https://github.com/TimsTittus/HomeChime'
+    },
+    featured: true
+  },
+  {
+    id: 3,
+    title: '404-Extension',
+    description: 'A Chrome extension that tracks 404 error page visits, saves their history and count locally, and displays both in a popup.',
+    image: '3',
+    tags: ['HTML/CSS', 'JavaScript'],
+    links: {
+      github: 'https://github.com/TimsTittus/404-Extension'
+    },
+    featured: true
+  },
+  {
+    id: 4,
     title: 'Parking Mangement System',
     description: 'Helps us to enter, display or alter the details of vehicles in parking records.',
-    image: '2',
+    image: '4',
     tags: ['Python','MySQL'],
     links: {
       github: 'https://github.com/TimsTittus/Parking-Management-System'
@@ -28,11 +51,11 @@ const projects = [
     featured: false
   },
   {
-    id: 3,
+    id: 5,
     title: 'Sjcet Events',
     description: 'Contributed to this platform for managing and viewing events happening at SJCET',
-    image: '3',
-    tags: ['HTML/CSS','JavaScript','Vue'],
+    image: '5',
+    tags: ['OpenSource', 'HTML/CSS','JavaScript','Vue'],
     links: {
       live: 'https://sjcet-events.vercel.app/',
       github: 'https://github.com/TimsTittus/Sjcet-Events'
@@ -40,10 +63,22 @@ const projects = [
     featured: false
   },
   {
-    id: 4,
+    id: 6,
+    title: 'Print-Shop',
+    description: 'OpenSource web application developed to improve efficiency of printing services within a college environment.',
+    image: '6',
+    tags: ['OpenSource', 'CSS', 'Python', 'Mako', 'TypeScript'],
+    links: {
+      live: 'https://github.com/TimsTittus/PortF',
+      github: 'https://github.com/TimsTittus/PortF'
+    },
+    featured: false
+  },
+  {
+    id: 7,
     title: 'Portfolio Website',
     description: 'A minimalist portfolio website crafted to highlight my technical projects and creative work.',
-    image: '4',
+    image: '7',
     tags: ['HTML/CSS', 'React', 'Vite', 'JavaScript'],
     links: {
       live: 'https://github.com/TimsTittus/PortF',

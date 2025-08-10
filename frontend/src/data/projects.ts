@@ -26,38 +26,26 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Parking Management System',
-    description: 'Helps us to enter, display or alter the details of vehicles in parking records.',
+    title: 'HomeChime',
+    description: 'Browser based app that, inspired by my family’s anxious wait for my younger brother’s school bus.',
     image: '',
-    tags: ['Python','MySQL'],
+    tags: ['HTML/CSS', 'JavaScript'],
     links: {
-      github: 'https://github.com/TimsTittus/Parking-Management-System'
+      live: 'https://homechime.vercel.app/',
+      github: 'https://github.com/TimsTittus/HomeChime'
     },
-    featured: false 
+    featured: true
   },
   {
     id: 3,
-    title: 'Sjcet Events',
-    description: 'Contributed to this platform for managing and viewing events happening at SJCET.',
-    image: '',
-    tags: ['HTML/CSS','JavaScript','Vue'],
+    title: '404-Extension',
+    description: 'A Chrome extension that tracks 404 error page visits, saves their history and count locally, and displays both in a popup.',
+    image: '3',
+    tags: ['HTML/CSS', 'JavaScript'],
     links: {
-      live: 'https://sjcet-events.vercel.app/',
-      github: 'https://github.com/TimsTittus/Sjcet-Events'
+      github: 'https://github.com/TimsTittus/404-Extension'
     },
-    featured: false
-  },
-  {
-    id: 4,
-    title: 'Portfolio Website',
-    description: 'A minimalist portfolio website crafted to highlight my technical projects and creative work.',
-    image: '',
-    tags: ['HTML/CSS', 'React', 'Vite', 'JavaScript'],
-    links: {
-      live: 'https://github.com/TimsTittus/PortF',
-      github: 'https://github.com/TimsTittus/PortF'
-    },
-    featured: false
+    featured: true
   }
   // Add more projects here
 ];
