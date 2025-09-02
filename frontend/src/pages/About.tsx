@@ -37,13 +37,13 @@ const About: React.FC = () => {
                 <h1 className="text-purple-600 text-3xl sm:text-4xl font-bold mb-6">About Me</h1>
                 <div className="space-y-4 text-gray-300">
                   <p>
-                  I'm a developer and designer driven by a singular goal—crafting seamless, efficient, and meaningful digital experiences. With a solid foundation in networking, web development, and a growing expertise in cybersecurity, I approach every project with both structure and soul. My work is where logic meets intuition, and every line of code is written with intention.
+                    I’m a developer, designer, and public speaker with a background in networking, web development, and cybersecurity. I’ve worked across UI/UX, ethical hacking, mentoring, and collaborative projects that blend security with usability.
                   </p>
                   <p>
-                  My journey began in the world of hardware and networks, later expanding into UI/UX design, automation, and ethical hacking. I'm currently deepening my skills in cybersecurity and serve as the college lead for Hack The Box, where I explore offensive security, vulnerability analysis, and red teaming. Over the years, I’ve led and collaborated on projects ranging from secure automation tools to clean, user-focused front ends—always with a focus on clarity and impact.
+                    I currently serve as leads in multiple professional societies and hold roles in several executive committees within and outside my college.
                   </p>
                   <p>
-                  Outside the screen, I explore human behavior through psychology books, ground myself in the gym, and capture fleeting moments through a lens. I'm not just building digital solutions—I'm decoding how people experience, trust, and interact with them.
+                    Beyond tech, I enjoy reading, traveling, meeting new people, and exploring different hobbies.
                   </p>
                 </div>
               </div>
@@ -56,7 +56,9 @@ const About: React.FC = () => {
                     <Code size={24} />
                   </div>
                     <h3 className="text-purple-300 text-xl font-bold mb-2">Web Development</h3>
-                    <p className="text-gray-400">Building responsive and optimized web applications using modern technologies and best practices.</p>
+                    <p className="text-gray-400">
+                      Building responsive and optimized web applications using modern technologies and best practices.
+                    </p>
                   </div>  
                                   
                   <div className="p-6 bg-dark-light border border-purple-900 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-purple-950 hover:scale-105 hover:shadow-xl">
@@ -64,7 +66,9 @@ const About: React.FC = () => {
                       <PenTool size={24} />
                     </div>
                     <h3 className="text-purple-300 text-xl font-bold mb-2">UI/UX Design</h3>
-                    <p className="text-gray-400">Creating intuitive interfaces and meaningful user experiences that balance form and function.</p>
+                    <p className="text-gray-400">
+                      Creating intuitive interfaces and meaningful user experiences that balance form and function.
+                    </p>
                   </div>
                   
                   <div className="p-6 bg-dark-light border border-purple-900 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-purple-950 hover:scale-105 hover:shadow-xl">
@@ -72,7 +76,9 @@ const About: React.FC = () => {
                       <Globe size={24} />
                     </div>
                     <h3 className="text-purple-300 text-xl font-bold mb-2">Cybersecurity</h3>
-                    <p className="text-gray-400">Securing systems through defense and ethical offense, identifying vulnerabilities, mitigating threats, and ensuring digital trust in an ever-evolving threat landscape.</p>
+                    <p className="text-gray-400">
+                      Securing systems by identifying vulnerabilities, mitigating threats, and ensuring digital trust.
+                    </p>
                   </div>
                   
                   <div className="p-6 bg-dark-light border border-purple-900 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-purple-950 hover:scale-105 hover:shadow-xl">
@@ -80,7 +86,9 @@ const About: React.FC = () => {
                       <Zap size={24} />
                     </div>
                     <h3 className="text-purple-300 text-xl font-bold mb-2">Leadership & Collaboration</h3>
-                    <p className="text-gray-400">Active across IEEE SB SJCET, HackTheBox, IEDC, FOSS Club, and more—leading by example, fostering collaboration, and driving innovation through community, code, and initiative.</p>
+                    <p className="text-gray-400">
+                      Active in IEEE SB SJCET, HackTheBox, IEDC, FOSS Club, and various other clubs and organizations, leading, collaborating, and driving innovation.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -98,7 +106,7 @@ const About: React.FC = () => {
                   <div className="p-4 bg-dark-light border border-gold/10 rounded-lg">
                     <h3 className="font-bold">Higher Secondary Education</h3>
                     <p className="text-purple-600 text-sm">St Marys Convent School Alakode • 2021-2023</p>
-                    <p className="text-gray-400 mt-2">Focused on corew subjects like Mathematics, Physics, Chemistry, and Computer Science—strengthened analytical thinking,
+                    <p className="text-gray-400 mt-2">Focused on corew subjects like Mathematics, Physics, Chemistry, and Computer Science, strengthened analytical thinking,
                         problem-solving, and a foundational understanding of computational systems.</p>
                   </div>
                 </div>
