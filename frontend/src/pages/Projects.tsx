@@ -90,7 +90,7 @@ const projects = [
 
 const categories = [
   'All',
-  ...new Set(projects.flatMap(project => project.tags)).values()
+  ...Array.from(new Set(projects.flatMap(project => project.tags))).sort()
 ];
 
 const Projects: React.FC = () => {
