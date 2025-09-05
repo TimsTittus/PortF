@@ -19,6 +19,74 @@ const workExperience = [
   },
   {
     id: 2,
+    title: 'MERN Stack Developer',
+    company: 'BRIK Community – Remote',
+    period: 'June 2025 – Present',
+    description: 'Building scalable full-stack solutions, focusing on performance optimization, security, and user experience.',
+    responsibilities: [
+      'Contributing to real-world community projects using the MERN stack (MongoDB, Express.js, React, Node.js).',
+      'Collaborating in a student-led environment focused on hands-on learning, product building, and peer mentorship.',
+      'Contributing to real-world projects using the full-stack solutions.',
+      'Improved application performance, reducing load times by 30%'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Mentor, Internship',
+    company: 'TheNexusProject (SJCET Bootcamp)',
+    period: 'June 2025 – July 2025',
+    description: 'Guided a team of student interns in building a minimal web platform, focusing on UI/UX, frontend, and backend workflows',
+    responsibilities: [
+      'Reviewed student progress, offered technical feedback, provided hands-on mentorship, and helped troubleshoot issues across the development cycle.',
+      'Guided interns in best practices for UI/UX design, frontend development, and backend integration.',
+      'Facilitated knowledge sharing and skill development through regular check-ins and code reviews.',
+      'Helped interns understand project requirements, set achievable goals, and deliver a functional web platform.'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Assistant Network Technician',
+    company: 'ITTA Cable Network – Kozhichal, Kannur',
+    period: 'February 2022 – August 2024',
+    description: 'Managed and optimized fiber network infrastructure, ensuring reliable connectivity, automation, and cross-functional collaboration.',
+    responsibilities: [
+      'Configured and optimized OLTs, routers, and fiber networks for improved performance',
+      'Automated routine tasks using scripting and SQL tools to enhance operational efficiency',
+      'Designed and deployed scalable network solutions with strong security protocols',
+      'Reduced downtime through advanced troubleshooting and proactive maintenance',
+      'Documented network architectures and provided technical training to support teams'
+    ]
+  }
+];
+
+const volunteeringExperience = [
+  {
+    id: 1,
+    title: 'College Lead',
+    company: 'HackTheBox Kerala',
+    period: 'Mar 2025 - June 2025',
+    description: 'Manage cybersecurity events, including CTFs and workshops, to build ethical hacking skills and promote awareness with HackTheBox Kerala.',
+    responsibilities: [
+      'Manage cybersecurity activities and encourage hacking skills on campus',
+      'Run CTFs, workshops, and practical sessions to build ethical hacking skills',
+      'Work with HackTheBox Kerala to raise cybersecurity awareness'
+    ]
+  },
+  {
+    id: 2,
+    title: 'Lead',
+    company: 'TheNexusProject (FOSS Club)',
+    period: 'June 2025 – Present',
+    description: 'Support open-source initiatives and cybersecurity activities through events, workshops, and community collaboration at The Nexus Project.',
+    responsibilities: [
+      'Organized FOSS workshops and technical sessions promoting open-source culture',
+      'Collaborated with peers to plan and execute college-wide tech activities',
+      'Mentored juniors on Git, version control, and secure coding practices',
+      'Helped grow community engagement and participation in open-source projects'
+    ]
+  },
+  {
+    id: 3,
     title: 'IPR & Research Lead',
     company: 'Startup Bootcamp SJCET – IEDC',
     period: 'January 2025 – Present',
@@ -32,46 +100,7 @@ const workExperience = [
     ]
   },
   {
-    id: 3,
-    title: 'Assistant Network Technician',
-    company: 'ITTA Cable Network – Kozhichal, Kannur',
-    period: 'February 2022 – August 2024',
-    description: 'Managed and optimized fiber network infrastructure, ensuring reliable connectivity, automation, and cross-functional collaboration.',
-    responsibilities: [
-      'Configured and optimized OLTs, routers, and fiber networks for improved performance',
-      'Automated routine tasks using scripting and SQL tools to enhance operational efficiency',
-      'Designed and deployed scalable network solutions with strong security protocols',
-      'Reduced downtime through advanced troubleshooting and proactive maintenance',
-      'Documented network architectures and provided technical training to support teams'
-    ]
-  },
-  {
     id: 4,
-    title: 'College Lead',
-    company: 'HackTheBox Kerala',
-    period: 'Mar 2025 - June 2025',
-    description: 'Manage cybersecurity events, including CTFs and workshops, to build ethical hacking skills and promote awareness with HackTheBox Kerala.',
-    responsibilities: [
-      'Manage cybersecurity activities and encourage hacking skills on campus',
-      'Run CTFs, workshops, and practical sessions to build ethical hacking skills',
-      'Work with HackTheBox Kerala to raise cybersecurity awareness'
-    ]
-  },
-  {
-    id: 5,
-    title: 'Cyber Lead, Core Team Member',
-    company: 'The Nexus Project (FOSS Club)',
-    period: 'November 2024 – Present',
-    description: 'Support open-source initiatives and cybersecurity activities through events, workshops, and community collaboration at The Nexus Project.',
-    responsibilities: [
-      'Organized FOSS workshops and technical sessions promoting open-source culture',
-      'Collaborated with peers to plan and execute college-wide tech activities',
-      'Mentored juniors on Git, version control, and secure coding practices',
-      'Helped grow community engagement and participation in open-source projects'
-    ]
-  },
-  {
-    id: 6,
     title: 'Vice-Chairperson',
     company: 'IEEE SIGHT SB SJCET',
     period: 'April 2025 – Present',
@@ -84,7 +113,20 @@ const workExperience = [
     ]
   },
   {
-    id: 7,
+    id: 5,
+    title: 'CyberLead, Core Team Member',
+    company: 'TheNexusProject (FOSS Club)',
+    period: 'November 2024 – Present',
+    description: 'Support open-source initiatives and cybersecurity activities through events, workshops, and community collaboration at The Nexus Project.',
+    responsibilities: [
+      'Organized FOSS workshops and technical sessions promoting open-source culture',
+      'Collaborated with peers to plan and execute college-wide tech activities',
+      'Mentored juniors on Git, version control, and secure coding practices',
+      'Helped grow community engagement and participation in open-source projects'
+    ]
+  },
+  {
+    id: 6,
     title: 'Graphic Designer',
     company: 'IEEE SB SJCET',
     period: 'May 2024 – March 2025',
@@ -146,6 +188,57 @@ const Experience: React.FC = () => {
                 className="relative p-6 bg-dark-light border border-gold/10 rounded-lg"
               >
                 {index < workExperience.length - 1 && (
+                  <div className="absolute bottom-0 left-8 w-0.5 h-8 bg-gold/20 -mb-8"></div>
+                )}
+                
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  <div className="md:w-1/3">
+                    <h3 className="text-xl font-bold">{job.title}</h3>
+                    <div className="flex items-center text-purple-600 mt-1">
+                      <Building size={16} className="mr-1" />
+                      <span>{job.company}</span>
+                    </div>
+                    <div className="flex items-center text-gray-400 mt-1">
+                      <Calendar size={16} className="mr-1" />
+                      <span>{job.period}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="md:w-2/3">
+                    <p className="text-gray-300 mb-4">{job.description}</p>
+                    <h4 className="font-bold mb-2">Key Responsibilities:</h4>
+                    <ul className="list-disc list-inside space-y-1 text-gray-400">
+                      {job.responsibilities.map((responsibility, i) => (
+                        <li key={i}>{responsibility}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Volunteering Experience</h1>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            A detailed overview of my volunteering journey, skills, and networks.
+          </p>
+        </div>
+        
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 flex items-center">
+            <Building className="mr-2 text-purple-600" />
+            Volunteering Experience
+          </h2>
+          
+          <div className="space-y-8">
+            {volunteeringExperience.map((job, index) => (
+              <div 
+                key={job.id} 
+                className="relative p-6 bg-dark-light border border-gold/10 rounded-lg"
+              >
+                {index < volunteeringExperience.length - 1 && (
                   <div className="absolute bottom-0 left-8 w-0.5 h-8 bg-gold/20 -mb-8"></div>
                 )}
                 
