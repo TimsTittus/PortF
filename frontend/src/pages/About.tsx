@@ -20,7 +20,7 @@ const About: React.FC = () => {
                 
                 <div className="mt-4">
                   <a 
-                    href="/assets/Tims_Resume.pdf" 
+                    href="/assets/Resume.pdf" 
                     className="inline-flex items-center justify-center w-full px-4 py-2 bg-purple-600 text-dark font-medium rounded text-sm hover:bg-purple-400 transition-colors duration-300"
                   >
                     <Download className="mr-2 h-4 w-4" />
