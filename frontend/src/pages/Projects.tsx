@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { ExternalLink, Github, ArrowRight, TrendingUpDownIcon } from 'lucide-react';
+import { ExternalLink, Github, Trophy, Star, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const projects = [
@@ -88,6 +87,27 @@ const projects = [
   }
 ];
 
+const achievements = [
+  {
+    id: 1,
+    title: "Hackathon Winner",
+    description: "Secured 2st place at Smart India Hackathon Prelims 2024 among 45+ teams.",
+    icon: <Trophy className="w-6 h-6 text-purple-500" />
+  },
+  {
+    id: 2,
+    title: "Open Source Contributor",
+    description: "Contributed to many open source projects inside & outside college.",
+    icon: <Star className="w-6 h-6 text-purple-500" />
+  },
+  {
+    id: 3,
+    title: "Lead & Execom Member",
+    description: "Holding lead & other main positions in various proffesional clubs and communities.",
+    icon: <Award className="w-6 h-6 text-purple-500" />
+  }
+];
+
 const categories = [
   'All',
   ...Array.from(new Set(projects.flatMap(project => project.tags))).sort()
@@ -102,6 +122,7 @@ const Projects: React.FC = () => {
   
   return (
     <div className="container mx-auto max-w-6xl">
+      {/* Projects Section */}
       <section className="py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">My Projects</h1>
@@ -154,15 +175,6 @@ const Projects: React.FC = () => {
                 </div>
  
                 <div className="flex items-center justify-between">
-                {/*
-                  <Link 
-                    to={`/projects/${project.id}`} 
-                    className="inline-flex items-center text-purple-600 group-hover:text-purple-300 transition-colors duration-300"
-                  >
-                    View Details
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                  */}
                   <div className="flex items-center space-x-4">
                     <a 
                       href={project.links.github} 
@@ -173,18 +185,45 @@ const Projects: React.FC = () => {
                     >
                       <Github size={18} />
                     </a>
-                    <a 
-                      href={project.links.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                      aria-label="Live project"
-                    >
-                      <ExternalLink size={18} />
-                    </a>
+                    {project.links.live && (
+                      <a 
+                        href={project.links.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
+                        aria-label="Live project"
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section className="py-12 border-t border-purple-900/40 mt-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4">Achievements</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            A glimpse of milestones and recognitions I’ve earned along my journey.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {achievements.map(ach => (
+            <div 
+              key={ach.id} 
+              className="bg-dark-light border border-purple-900/60 rounded-lg p-6 hover:border-purple-700 transition-all duration-300"
+            >
+              <div className="flex items-center space-x-3 mb-4">
+                {ach.icon}
+                <h3 className="text-lg font-semibold">{ach.title}</h3>
+              </div>
+              <p className="text-gray-400">{ach.description}</p>
             </div>
           ))}
         </div>

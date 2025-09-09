@@ -40,7 +40,7 @@ export const projects: Project[] = [
     id: 3,
     title: '404-Extension',
     description: 'A Chrome extension that tracks 404 error page visits, saves their history and count locally, and displays both in a popup.',
-    image: '3',
+    image: '',
     tags: ['HTML/CSS', 'JavaScript'],
     links: {
       github: 'https://github.com/TimsTittus/404-Extension'
