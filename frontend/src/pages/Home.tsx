@@ -15,10 +15,10 @@ const Home: React.FC = () => {
               <span className="btn -shine">Tims Tittus</span>
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400">
-              CyberSecurity Student & Ideal Generalist
+              Engineering CyberSecurity Student & Polymath
             </h2>
             <p className="text-gray-400 max-w-2xl mt-6 text-lg">
-            I craft elegant solutions through code and design—where structure meets intuition, and every detail serves a purpose.
+            I build secure, efficient solutions, blending coding, design, and cybersecurity skills as a modern polymath.
             </p>
             <div className="pt-6 flex flex-wrap gap-4">
             <div className="flex items-center gap-4 flex-wrap">

@@ -16,7 +16,7 @@ const About: React.FC = () => {
               
               <div className="p-4 text-center">
                 <h2 className="text-xl font-bold">Tims Tittus</h2>
-                <p className="text-purple-600 text-sm">CyberSecurity Student & Ideal Generalist</p>
+                <p className="text-purple-600 text-sm">Engineering CyberSecurity Student & Polymath</p>
                 
                 <div className="mt-4">
                   <a 
@@ -37,14 +37,15 @@ const About: React.FC = () => {
                 <h1 className="text-purple-600 text-3xl sm:text-4xl font-bold mb-6">About Me</h1>
                 <div className="space-y-4 text-gray-300">
                   <p>
-                    I’m a developer, designer, and public speaker with a background in networking, web development, and cybersecurity. I’ve worked across UI/UX, ethical hacking, mentoring, and collaborative projects that blend security with usability.
+                    I’m a full-stack developer, UI/UX designer, and public speaker with expertise in networking, web development, and cybersecurity. I’ve contributed to ethical hacking projects, mentorship programs, and collaborative applications that combine security with usability.
                   </p>
                   <p>
-                    I currently serve as leads in multiple professional societies and hold roles in several executive committees within and outside my college.
+                    I lead multiple professional societies and hold key roles in executive committees, driving technology initiatives and student-led projects within and beyond my college.
                   </p>
                   <p>
-                    Beyond tech, I enjoy reading, traveling, meeting new people, and exploring different hobbies.
+                    Outside of technology, I enjoy reading, traveling, networking, and exploring diverse hobbies that expand my skills and perspectives.
                   </p>
+
                 </div>
               </div>
               

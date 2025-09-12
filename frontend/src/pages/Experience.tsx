@@ -8,13 +8,11 @@ const workExperience = [
     title: 'Web Master',
     company: 'IEEE SB SJCET',
     period: 'April 2025 - Present',
-    description: 'Oversee the maintenance, design, and functionality of the IEEE SB SJCET website to enhance member engagement and promote events.',
+    description: 'Maintain and develop the IEEE SB SJCET websites, ensuring reliable performance, clear design, and up-to-date event details.',
     responsibilities: [
-      'Updated IEEE SB SJCET website with timely event details and content',
-      'Resolved website and tech issues, ensuring optimal IEEE SB SJCET performance',
-      'Designed user-friendly web pages for enhanced accessibility and engagement',
-      'Improved application performance, reducing load times by 40%',
-      'Mentored junior developers and conducted code reviews'
+      'Maintained and updated the IEEE SB SJCET websites with event content',
+      'Resolved technical issues and optimized performance (40% faster load times)',
+      'Designed accessible pages and mentored junior developers'
     ]
   },
   {
@@ -22,12 +20,11 @@ const workExperience = [
     title: 'MERN Stack Developer',
     company: 'BRIK Community – Remote',
     period: 'June 2025 – Present',
-    description: 'Building scalable full-stack solutions, focusing on performance optimization, security, and user experience.',
+    description: 'Develop scalable full-stack web applications with optimized performance, strong security, and excellent user experience.',
     responsibilities: [
-      'Contributing to real-world community projects using the MERN stack (MongoDB, Express.js, React, Node.js).',
-      'Collaborating in a student-led environment focused on hands-on learning, product building, and peer mentorship.',
-      'Contributing to real-world projects using the full-stack solutions.',
-      'Improved application performance, reducing load times by 30%'
+      'Build and optimize community web projects with the MERN stack (MongoDB, Express.js, React, Node.js)',
+      'Collaborate in student teams on real-world full-stack applications',
+      'mprove site performance, cutting load times by 30%'
     ]
   },
   {
@@ -35,12 +32,11 @@ const workExperience = [
     title: 'Mentor, Internship',
     company: 'TheNexusProject (SJCET Bootcamp)',
     period: 'June 2025 – July 2025',
-    description: 'Guided a team of student interns in building a minimal web platform, focusing on UI/UX, frontend, and backend workflows',
+    description: 'Led student interns in creating a lightweight web platform with optimized UI/UX, frontend, and backend workflows.',
     responsibilities: [
-      'Reviewed student progress, offered technical feedback, provided hands-on mentorship, and helped troubleshoot issues across the development cycle.',
-      'Guided interns in best practices for UI/UX design, frontend development, and backend integration.',
-      'Facilitated knowledge sharing and skill development through regular check-ins and code reviews.',
-      'Helped interns understand project requirements, set achievable goals, and deliver a functional web platform.'
+      'Mentored interns through UI/UX, frontend, and backend development best practices',
+      'Reviewed progress, gave technical feedback, and resolved issues across the development cycle',
+      'Guided project planning and code reviews to deliver a functional web platform'
     ]
   },
   {
@@ -48,13 +44,12 @@ const workExperience = [
     title: 'Assistant Network Technician',
     company: 'ITTA Cable Network – Kozhichal, Kannur',
     period: 'February 2022 – August 2024',
-    description: 'Managed and optimized fiber network infrastructure, ensuring reliable connectivity, automation, and cross-functional collaboration.',
+    description: 'Managed and optimized fiber network infrastructure for reliable, automated connectivity.',
     responsibilities: [
-      'Configured and optimized OLTs, routers, and fiber networks for improved performance',
-      'Automated routine tasks using scripting and SQL tools to enhance operational efficiency',
-      'Designed and deployed scalable network solutions with strong security protocols',
-      'Reduced downtime through advanced troubleshooting and proactive maintenance',
-      'Documented network architectures and provided technical training to support teams'
+      'Configure and optimize OLTs, routers, and fiber networks for high performance',
+      'Automate network tasks with scripting and SQL to boost efficiency',
+      'Design and deploy scalable, secure fiber network solutions',
+      'Troubleshoot, maintain systems to minimize downtime and train support teams'
     ]
   }
 ];
