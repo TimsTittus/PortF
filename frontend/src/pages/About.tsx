@@ -107,7 +107,7 @@ const About: React.FC = () => {
                   <div className="p-4 bg-dark-light border border-gold/10 rounded-lg">
                     <h3 className="font-bold">Higher Secondary Education</h3>
                     <p className="text-purple-600 text-sm">St Marys Convent School Alakode • 2021-2023</p>
-                    <p className="text-gray-400 mt-2">Focused on corew subjects like Mathematics, Physics, Chemistry, and Computer Science, strengthened analytical thinking,
+                    <p className="text-gray-400 mt-2">Focused on core subjects like Mathematics, Physics, Chemistry, and Computer Science, strengthened analytical thinking,
                         problem-solving, and a foundational understanding of computational systems.</p>
                   </div>
                 </div>

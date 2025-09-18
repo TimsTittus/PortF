@@ -91,19 +91,19 @@ const achievements = [
   {
     id: 1,
     title: "Hackathon Winner",
-    description: "Secured 2st place at Smart India Hackathon Prelims 2024 among 45+ teams.",
+    description: "Secured 2nd place at Smart India Hackathon Prelims 2024 among 45+ teams.",
     icon: <Trophy className="w-6 h-6 text-purple-500" />
   },
   {
     id: 2,
-    title: "Open Source Contributor",
+    title: "Open Source Contributor & Maintainer",
     description: "Contributed to many open source projects inside & outside college.",
     icon: <Star className="w-6 h-6 text-purple-500" />
   },
   {
     id: 3,
     title: "Lead & Execom Member",
-    description: "Holding lead & other main positions in various proffesional clubs and communities.",
+    description: "Holding lead & other main positions in various profesional clubs and communities.",
     icon: <Award className="w-6 h-6 text-purple-500" />
   }
 ];

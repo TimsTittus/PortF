@@ -24,7 +24,7 @@ const workExperience = [
     responsibilities: [
       'Build and optimize community web projects with the MERN stack (MongoDB, Express.js, React, Node.js)',
       'Collaborate in student teams on real-world full-stack applications',
-      'mprove site performance, cutting load times by 30%'
+      'Improve site performance, cutting load times by 30%'
     ]
   },
   {
@@ -72,12 +72,11 @@ const volunteeringExperience = [
     title: 'Lead',
     company: 'TheNexusProject (FOSS Club)',
     period: 'June 2025 – Present',
-    description: 'Support open-source initiatives and cybersecurity activities through events, workshops, and community collaboration at The Nexus Project.',
+    description: 'Support open-source projects and cybersecurity programs through events, workshops, and community work at The Nexus Project.',
     responsibilities: [
-      'Organized FOSS workshops and technical sessions promoting open-source culture',
-      'Collaborated with peers to plan and execute college-wide tech activities',
-      'Mentored juniors on Git, version control, and secure coding practices',
-      'Helped grow community engagement and participation in open-source projects'
+      'Organized FOSS workshops and technical sessions to promote open-source culture',
+      'Collaborated with peers to plan and execute college-wide tech activities ncluding FOSSDAY, Debian installation parties, Season of Commits and Internship',
+      'Mentored students on Git, version control, secure coding, and open-source projects'
     ]
   },
   {
@@ -89,9 +88,7 @@ const volunteeringExperience = [
     responsibilities: [
       'Guided teams in patent drafting, prior art searches, and technical documentation',
       'Organized IP awareness programs and research workshops for students',
-      'Promoted a culture of innovation through structured IP support systems',
-      'Collaborated with faculty and experts to offer research mentorship',
-      'Facilitated technology disclosures and supported filing processes'
+      'Promoted a culture of innovation through structured IP support systems'
     ]
   },
   {
@@ -99,12 +96,11 @@ const volunteeringExperience = [
     title: 'Vice-Chairperson',
     company: 'IEEE SIGHT SB SJCET',
     period: 'April 2025 – Present',
-    description: 'Support planning and execution of community outreach and social impact projects under IEEE SIGHT, fostering collaboration and awareness.',
+    description: 'Helpplan and run IEEE SIGHT community outreach projects.',
     responsibilities: [
-      'Assisted in organizing and managing IEEE SIGHT community initiatives',
-      'Promoted IEEE SIGHT goals through events and awareness campaigns',
-      'Planned outreach programs focused on sustainable and impactful solutions',
-      'Coordinated with internal teams and external partners for seamless execution'
+      'Organize and manage IEEE SIGHT community projects and outreach programs',
+      'Promote IEEE SIGHT goals through events and awareness activities',
+      'Coordinate with teams and partners to deliver sustainable solutions'
     ]
   },
   {
@@ -112,12 +108,11 @@ const volunteeringExperience = [
     title: 'CyberLead, Core Team Member',
     company: 'TheNexusProject (FOSS Club)',
     period: 'November 2024 – Present',
-    description: 'Support open-source initiatives and cybersecurity activities through events, workshops, and community collaboration at The Nexus Project.',
+    description: 'Support open-source and cybersecurity projects through events, workshops, and community work at The Nexus Project.',
     responsibilities: [
-      'Organized FOSS workshops and technical sessions promoting open-source culture',
-      'Collaborated with peers to plan and execute college-wide tech activities',
-      'Mentored juniors on Git, version control, and secure coding practices',
-      'Helped grow community engagement and participation in open-source projects'
+      'Organized FOSS workshops and technical sessions to promote open-source culture',
+      'Plan and execute college-wide tech events with peers, mentoring students on Git, version control, and secure coding',
+      'Grow community engagement and participation in open-source projects'
     ]
   },
   {
@@ -125,12 +120,11 @@ const volunteeringExperience = [
     title: 'Graphic Designer',
     company: 'IEEE SB SJCET',
     period: 'May 2024 – March 2025',
-    description: 'Created engaging visual content for IEEE SB SJCET events and initiatives while maintaining brand consistency and timely delivery.',
+    description: 'Created visual content for IEEE SB SJCET events, ensuring brand consistency and on-time delivery.',
     responsibilities: [
       'Designed event posters, social media graphics, and promotional materials',
       'Used Figma, Photoshop, and Illustrator to produce high-quality visuals',
-      'Ensured compliance with IEEE branding guidelines across all designs',
-      'Collaborated with event teams to deliver assets on schedule'
+      'Worked with event teams to deliver high-quality assets on time'
     ]
   }
 ];
@@ -145,16 +139,16 @@ const skills = {
     { name: 'Git', level: 85 }
   ],
   design: [
-    { name: 'UI Design', level: 80 },
+    { name: 'UI Design', level: 95 },
     { name: 'UX Research', level: 75 },
     { name: 'Figma/Sketch', level: 85 },
     { name: 'Responsive Design', level: 90 }
   ],
   soft: [
-    { name: 'Communication', level: 90 },
+    { name: 'Communication', level: 100 },
     { name: 'Problem Solving', level: 85 },
     { name: 'Team Collaboration', level: 95 },
-    { name: 'Time Management', level: 80 },
+    { name: 'Time Management', level: 90 },
     { name: 'Adaptability', level: 90 }
   ]
 };
