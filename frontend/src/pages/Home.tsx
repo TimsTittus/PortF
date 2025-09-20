@@ -152,7 +152,7 @@ const Home: React.FC = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {[
-            'Recon', 'Networking', 'React', 'Creative Designing', 
+            'Speaker', 'Networking', 'Full-Stack', 'Creative Designing', 
             'Cybersecurity', 'Bug-Hunting', 'UI/UX Design', 'Leadership'
             ].map((skill) => (
             <div 

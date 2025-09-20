@@ -8,7 +8,7 @@ const projects = [
     title: 'Steg Tool',
     description: 'A steganography tool that allows you to hide and extract messages within images.',
     image: '1',
-    tags: ['Python', 'Crytpgraphy', 'Streamlit'],
+    tags: ['Python', 'Crytpgraphy', 'Streamlit', 'Security'],
     links: {
       live: 'https://steg-it.streamlit.app/',
       github: 'https://github.com/TimsTittus/Steg_Tool'
@@ -29,20 +29,32 @@ const projects = [
   },
   {
     id: 3,
-    title: '404-Extension',
-    description: 'A Chrome extension that tracks 404 error page visits, saves their history and count locally, and displays both in a popup.',
+    title: 'WEBVNR Desktop',
+    description: 'Python + Qt app to test web endpoints for SQLi, XSS, and sensitive data leaks with custom payloads and results.',
     image: '3',
-    tags: ['HTML/CSS', 'JavaScript'],
+    tags: ['Python', 'PyQt', 'Desktop App', 'Security'],
     links: {
-      github: 'https://github.com/TimsTittus/404-Extension'
+      live: '',
+      github: ''
     },
     featured: true
   },
   {
     id: 4,
+    title: '404-Extension',
+    description: 'Chrome extension that tracks 404 error page visits, saves their history and count locally, and displays both in a popup.',
+    image: '4',
+    tags: ['HTML/CSS', 'JavaScript'],
+    links: {
+      github: 'https://github.com/TimsTittus/404-Extension'
+    },
+    featured: false
+  },
+  {
+    id: 5,
     title: 'Parking Mangement System',
     description: 'Helps us to enter, display or alter the details of vehicles in parking records.',
-    image: '4',
+    image: '5',
     tags: ['Python','MySQL'],
     links: {
       github: 'https://github.com/TimsTittus/Parking-Management-System'
@@ -50,10 +62,10 @@ const projects = [
     featured: false
   },
   {
-    id: 5,
+    id: 6,
     title: 'Sjcet Events',
     description: 'Contributed to this platform for managing and viewing events happening at SJCET',
-    image: '5',
+    image: '6',
     tags: ['OpenSource', 'HTML/CSS','JavaScript','Vue'],
     links: {
       live: 'https://sjcet-events.vercel.app/',
@@ -62,10 +74,10 @@ const projects = [
     featured: false
   },
   {
-    id: 6,
+    id: 7,
     title: 'Print-Shop',
     description: 'OpenSource web application developed to improve efficiency of printing services within a college environment.',
-    image: '6',
+    image: '7',
     tags: ['OpenSource', 'CSS', 'Python', 'Mako', 'TypeScript'],
     links: {
       live: 'https://github.com/TimsTittus/PortF',
@@ -74,10 +86,10 @@ const projects = [
     featured: false
   },
   {
-    id: 7,
+    id: 8,
     title: 'Portfolio Website',
     description: 'A minimalist portfolio website crafted to highlight my technical projects and creative work.',
-    image: '7',
+    image: '8',
     tags: ['HTML/CSS', 'React', 'Vite', 'JavaScript'],
     links: {
       live: 'https://github.com/TimsTittus/PortF',
@@ -103,7 +115,7 @@ const achievements = [
   {
     id: 3,
     title: "Lead & Execom Member",
-    description: "Holding lead & other main positions in various profesional clubs and communities.",
+    description: "Holding lead & other main positions in various professional clubs and communities.",
     icon: <Award className="w-6 h-6 text-purple-500" />
   }
 ];

@@ -38,12 +38,13 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: '404-Extension',
-    description: 'A Chrome extension that tracks 404 error page visits, saves their history and count locally, and displays both in a popup.',
+    title: 'WEBVNR Desktop',
+    description: 'Python + Qt app to test web endpoints for SQLi, XSS, and sensitive data leaks with custom payloads and results.',
     image: '',
-    tags: ['HTML/CSS', 'JavaScript'],
+    tags: ['Python', 'PyQt', 'Desktop App', 'Security'],
     links: {
-      github: 'https://github.com/TimsTittus/404-Extension'
+      live: '',
+      github: ''
     },
     featured: true
   }
