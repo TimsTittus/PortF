@@ -4,10 +4,21 @@ import { Link } from 'react-router-dom';
 
 const projects = [
   {
+    id: 4,
+    title: 'Asthra-CTF',
+    description: 'Developed a complete CTF platform from scratch with my team for the national tech fest Asthra.',
+    image: '',
+    tags: ['HTML/CSS', 'JavaScript', 'Python', 'Docker', 'CTF', 'Security'],
+    links: {
+      github: 'https://github.com/Cyber-Security-Association-SJCET/asthra-ctf'
+    },
+    featured: false
+  },
+  {
     id: 1,
     title: 'Steg Tool',
     description: 'A steganography tool that allows you to hide and extract messages within images.',
-    image: '1',
+    image: '',
     tags: ['Python', 'Crytpgraphy', 'Streamlit', 'Security'],
     links: {
       live: 'https://steg-it.streamlit.app/',
@@ -19,7 +30,7 @@ const projects = [
     id: 2,
     title: 'HomeChime',
     description: 'Browser based app that, inspired by my family’s anxious wait for my younger brother’s school bus.',
-    image: '2',
+    image: '',
     tags: ['HTML/CSS', 'JavaScript'],
     links: {
       live: 'https://homechime.vercel.app/',
@@ -31,7 +42,7 @@ const projects = [
     id: 3,
     title: 'WEBVNR Desktop',
     description: 'Python + Qt app to test web endpoints for SQLi, XSS, and sensitive data leaks with custom payloads and results.',
-    image: '3',
+    image: '',
     tags: ['Python', 'PyQt', 'Desktop App', 'Security'],
     links: {
       live: '',
@@ -40,10 +51,10 @@ const projects = [
     featured: true
   },
   {
-    id: 4,
+    id: 5,
     title: '404-Extension',
     description: 'Chrome extension that tracks 404 error page visits, saves their history and count locally, and displays both in a popup.',
-    image: '4',
+    image: '',
     tags: ['HTML/CSS', 'JavaScript'],
     links: {
       github: 'https://github.com/TimsTittus/404-Extension'
@@ -51,10 +62,10 @@ const projects = [
     featured: false
   },
   {
-    id: 5,
+    id: 6,
     title: 'Parking Mangement System',
     description: 'Helps us to enter, display or alter the details of vehicles in parking records.',
-    image: '5',
+    image: '',
     tags: ['Python','MySQL'],
     links: {
       github: 'https://github.com/TimsTittus/Parking-Management-System'
@@ -62,10 +73,10 @@ const projects = [
     featured: false
   },
   {
-    id: 6,
+    id: 7,
     title: 'Sjcet Events',
     description: 'Contributed to this platform for managing and viewing events happening at SJCET',
-    image: '6',
+    image: '',
     tags: ['OpenSource', 'HTML/CSS','JavaScript','Vue'],
     links: {
       live: 'https://sjcet-events.vercel.app/',
@@ -74,10 +85,10 @@ const projects = [
     featured: false
   },
   {
-    id: 7,
+    id: 8,
     title: 'Print-Shop',
     description: 'OpenSource web application developed to improve efficiency of printing services within a college environment.',
-    image: '7',
+    image: '',
     tags: ['OpenSource', 'CSS', 'Python', 'Mako', 'TypeScript'],
     links: {
       live: 'https://github.com/TimsTittus/PortF',
@@ -86,10 +97,10 @@ const projects = [
     featured: false
   },
   {
-    id: 8,
+    id: 9,
     title: 'Portfolio Website',
     description: 'A minimalist portfolio website crafted to highlight my technical projects and creative work.',
-    image: '8',
+    image: '',
     tags: ['HTML/CSS', 'React', 'Vite', 'JavaScript'],
     links: {
       live: 'https://github.com/TimsTittus/PortF',
