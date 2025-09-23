@@ -15,7 +15,7 @@ const Home: React.FC = () => {
               <span className="btn -shine">Tims Tittus</span>
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-gray-400">
-              Engineering CyberSecurity Student & Polymath
+              Engineering, CyberSecurity Student & Polymath
             </h2>
             <p className="text-gray-400 max-w-2xl mt-6 text-lg">
             I build secure, efficient solutions, blending coding, design, and cybersecurity skills as a modern polymath.
