@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Trophy, Star, Award } from 'lucide-react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 const projects = [
@@ -67,7 +67,7 @@ const projects = [
     title: 'Parking Mangement System',
     description: 'Helps us to enter, display or alter the details of vehicles in parking records.',
     image: '',
-    tags: ['Python','MySQL'],
+    tags: ['Python', 'MySQL'],
     links: {
       github: 'https://github.com/TimsTittus/Parking-Management-System'
     },
@@ -78,7 +78,7 @@ const projects = [
     title: 'Sjcet Events',
     description: 'Contributed to this platform for managing and viewing events happening at SJCET',
     image: '',
-    tags: ['OpenSource', 'HTML/CSS','JavaScript','Vue'],
+    tags: ['OpenSource', 'HTML/CSS', 'JavaScript', 'Vue'],
     links: {
       live: 'https://sjcet-events.vercel.app/',
       github: 'https://github.com/TimsTittus/Sjcet-Events'
@@ -145,14 +145,14 @@ const categories = [
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  
+
   const filteredProjects = activeFilter === 'All'
     ? projects
     : projects.filter(project => project.tags.includes(activeFilter));
-  
+
   return (
     <div className="container mx-auto max-w-6xl">
-      
+
       {/* SEO structured data.*/}
       <Helmet>
         <title>My Projects & Achievements</title>
@@ -161,8 +161,8 @@ const Projects: React.FC = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Tims Tittus", 
-            "url": "https://timstittus.vercel.app", 
+            "name": "Tims Tittus",
+            "url": "https://timstittus.vercel.app",
             "sameAs": [
               "https://github.com/TimsTittus",
               "https://www.linkedin.com/in/tims-tittus/"
@@ -184,23 +184,22 @@ const Projects: React.FC = () => {
             A curated selection of my projects showcasing my skills in development, design, and problem-solving.
           </p>
         </div>
-        
+
         <div className="flex justify-center flex-wrap gap-2 mb-10">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                activeFilter === category
-                  ? 'bg-purple-700 text-dark border-purple-700'
-                  : 'bg-dark-light text-gray-400 hover:text-purple-400 hover:bg-dark-lighter hover:scale-110 hover:border-purple-700'
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeFilter === category
+                ? 'bg-purple-700 text-dark border-purple-700'
+                : 'bg-dark-light text-gray-400 hover:text-purple-400 hover:bg-dark-lighter hover:scale-110 hover:border-purple-700'
+                }`}
             >
               {category}
             </button>
           ))}
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <div
@@ -215,11 +214,11 @@ const Projects: React.FC = () => {
                   </span>
                 )}
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-400 mb-4 h-20 overflow-hidden">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (
                     <span key={tag} className="px-3 py-1 text-xs bg-dark rounded text-gray-400">
@@ -227,14 +226,14 @@ const Projects: React.FC = () => {
                     </span>
                   ))}
                 </div>
- 
+
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
                     {/* Only show icon if link exists */}
                     {project.links.github && (
-                      <a 
-                        href={project.links.github} 
-                        target="_blank" 
+                      <a
+                        href={project.links.github}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
                         aria-label="GitHub repository"
@@ -244,9 +243,9 @@ const Projects: React.FC = () => {
                     )}
                     {/* Only show icon if link exists */}
                     {project.links.live && (
-                      <a 
-                        href={project.links.live} 
-                        target="_blank" 
+                      <a
+                        href={project.links.live}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
                         aria-label="Live project"

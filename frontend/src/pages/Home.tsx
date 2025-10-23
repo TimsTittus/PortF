@@ -1,12 +1,63 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../data/projects';
 
 const Home: React.FC = () => {
+  const canonicalUrl = 'https://timstittus.vercel.app'; 
+  const siteTitle = 'Tims Tittus - Engineering & CyberSecurity Student';
+  const siteDescription = 'I build secure, efficient solutions, blending coding, design, and cybersecurity skills as a modern polymath.';
+  const socialImageUrl = `${canonicalUrl}/assets/hiddenimage.png`; 
+
   return (
     <div className="container mx-auto max-w-7xl">
+      <Helmet>
+        {/* --- Primary Meta Tags --- */}
+        <title>{siteTitle}</title>
+        <meta name="description" content={siteDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* --- Open Graph / Facebook (and LinkedIn, etc.) --- */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:image" content={socialImageUrl} />
+
+        {/* --- Twitter Card --- */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={siteTitle} />
+        <meta name="twitter:description" content={siteDescription} />
+        <meta name="twitter:image" content={socialImageUrl} />
+
+        {/* --- Structured Data (JSON-LD) --- */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "dateCreated": new Date().toISOString(),
+            "dateModified": new Date().toISOString(),
+            "mainEntity": {
+              "@type": "Person",
+              "name": "Tims Tittus",
+              "alternateName": "Tims",
+              "url": canonicalUrl,
+              "image": socialImageUrl,
+              "jobTitle": "Engineering, CyberSecurity Student & Polymath",
+              "description": siteDescription,
+              "sameAs": [
+                "https://github.com/TimsTittus",
+                "https://www.linkedin.com/in/tims-tittus/"
+
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
+
       <section className="min-h-[80vh] flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-12">
           <div className="lg:col-span-8 space-y-6">
@@ -49,27 +100,27 @@ const Home: React.FC = () => {
 
             </div>
           </div>
-          {/*(<div className="lg:col-span-4 hidden lg:block">
+          {/* <div className="lg:col-span-4 hidden lg:block">
             <div className="relative">
               <div className="w-full h-96 bg-dark-light rounded-lg border border-purple-600/20 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
                     src="/assets/hiddenimage.png"
-                    alt="Background"
+                    alt="A visual representation for Tims Tittus's portfolio"
                     className="w-full h-full object-cover opacity-90"
                   />
                 </div>
               </div>
             </div>
-          </div>*/}
+          </div> */}
         </div>
       </section>
-      
+            
       <section className="py-16 border-t border-purple-600/10">
         <div className="text-center mb-12">
-  <h2 className="text-3xl font-bold mb-2">Featured Projects</h2>
-  <p className="text-gray-400">Some of my recent work</p>
-</div>
+          <h2 className="text-3xl font-bold mb-2">Featured Projects</h2>
+          <p className="text-gray-400">Some of my recent work</p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.filter(project => project.featured)
