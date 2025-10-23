@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Building, Calendar, Award, BookOpen } from 'lucide-react';
 
