@@ -47,7 +47,7 @@ const projects = [
     tags: ['Python', 'PyQt', 'Desktop App', 'Security'],
     links: {
       live: '',
-      github: ''
+      github: 'https://github.com/TimsTittus/WEBVNR'
     },
     featured: true
   },

@@ -23,7 +23,8 @@ export const projects: Project[] = [
       live: 'https://steg-it.streamlit.app/',
       github: 'https://github.com/TimsTittus/Steg_Tool'
     },
-    featured: true
+    featured: true,
+    imageUrl: ""
   },
   {
     id: 2,
@@ -35,7 +36,8 @@ export const projects: Project[] = [
       live: 'https://homechime.vercel.app/',
       github: 'https://github.com/TimsTittus/HomeChime'
     },
-    featured: true
+    featured: true,
+    imageUrl: ""
   },
   {
     id: 3,
@@ -45,9 +47,10 @@ export const projects: Project[] = [
     tags: ['Python', 'PyQt', 'Desktop App', 'Security'],
     links: {
       live: '',
-      github: ''
+      github: 'https://github.com/TimsTittus/WEBVNR'
     },
-    featured: true
+    featured: true,
+    imageUrl: ""
   }
   // Add more projects here
 ];
