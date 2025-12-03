@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { supabase } from '../supabaseClient';
 
 const AnalyticsTracker = () => {
   const location = useLocation();
   const startTime = useRef<number>(Date.now());
-  const hasFetchedIp = useRef(false);
+  const currentSessionId = useRef<string | null>(null);
 
-  // --- Helper: Get GPU Info ---
+  // --- Helper: Get Detailed GPU Info ---
   const getGPU = () => {
     try {
       const canvas = document.createElement('canvas');
@@ -21,82 +22,77 @@ const AnalyticsTracker = () => {
     }
   };
 
-  // --- Helper: Get Connection Info ---
-  const getConnectionInfo = () => {
-    // @ts-ignore
-    const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    return conn ? { type: conn.effectiveType, saveData: conn.saveData } : 'Unknown';
-  };
-
-  // --- 1. Gather Static User Data (Hardware/Software) ---
-  const getSystemDetails = () => {
-    return {
-      screen: {
-        width: window.screen.width,
-        height: window.screen.height,
-        colorDepth: window.screen.colorDepth,
-        orientation: window.screen.orientation?.type
-      },
-      hardware: {
-        cpuCores: navigator.hardwareConcurrency, // Number of logical processors
-        // @ts-ignore
-        memory: navigator.deviceMemory ? `${navigator.deviceMemory} GB` : 'Unknown', // RAM (approx)
-        gpu: getGPU(),
-        platform: navigator.platform,
-        vendor: navigator.vendor,
-      },
-      software: {
-        userAgent: navigator.userAgent,
-        language: navigator.language,
-        cookiesEnabled: navigator.cookieEnabled,
-      },
-      connection: getConnectionInfo(),
-      referrer: document.referrer || 'Direct',
-    };
-  };
-
-  // --- 2. Track Page Visits & Time ---
   useEffect(() => {
-    // This runs every time the route (URL) changes
     const currentPath = location.pathname;
-    
-    // Log entry time
     startTime.current = Date.now();
-    console.log(`[Analytics] Entered: ${currentPath} at ${new Date().toLocaleTimeString()}`);
+    currentSessionId.current = null; // Reset session ID for new page
 
-    // Fetch IP/Location Data (Only once per session to save API calls)
-    if (!hasFetchedIp.current) {
-      fetch('https://ipapi.co/json/')
-        .then(res => res.json())
-        .then(data => {
-            const fullUserProfile = {
-                network: data, // IP, City, ISP, etc.
-                system: getSystemDetails(),
-                timestamp: new Date().toISOString()
-            };
-            
-            console.log("🚀 FULL USER PROFILE CAPTURED:", fullUserProfile);
-            // TODO: SEND 'fullUserProfile' TO YOUR DATABASE HERE (Firebase/Supabase)
-            
-            hasFetchedIp.current = true;
-        })
-        .catch(err => console.error("Ad-blocker blocking IP fetch:", err));
-    }
+    const logVisit = async () => {
+      try {
+        // 1. Fetch IP & Location (Using a free API)
+        const res = await fetch('https://ipapi.co/json/');
+        const ipData = await res.json();
 
-    // Cleanup function: Runs when user LEAVES the page
-    return () => {
-      const timeSpent = (Date.now() - startTime.current) / 1000;
-      console.log(`[Analytics] Left: ${currentPath}. Time spent: ${timeSpent}s`);
-      
-      const pageSessionData = {
-          page: currentPath,
-          timeSpentSeconds: timeSpent,
-          timestamp: new Date().toISOString()
-      };
+        // 2. Prepare System Info
+        const systemInfo = {
+          screen: `${window.screen.width}x${window.screen.height}`,
+          gpu: getGPU(),
+          cpu_cores: navigator.hardwareConcurrency,
+          // @ts-ignore
+          ram: navigator.deviceMemory ? `~${navigator.deviceMemory} GB` : 'Unknown',
+          ua: navigator.userAgent,
+          platform: navigator.platform
+        };
 
-      // TODO: SEND 'pageSessionData' TO YOUR DATABASE HERE
+        // 3. INSERT into Supabase
+        const { data, error } = await supabase
+          .from('analytics')
+          .insert([
+            {
+              ip: ipData.ip,
+              city: ipData.city,
+              country: ipData.country_name,
+              isp: ipData.org,
+              device_info: systemInfo,
+              page: currentPath,
+            }
+          ])
+          .select() // vital to get the ID back
+          .single();
+
+        if (error) throw error;
+        
+        // Save the ID so we can update this row when the user leaves
+        if (data) {
+            currentSessionId.current = data.id;
+            console.log(`[Analytics] Tracking started. ID: ${data.id}`);
+        }
+
+      } catch (err) {
+        console.error("Analytics Error:", err);
+      }
     };
-  }, [location]);
+
+    logVisit();
+
+    // --- CLEANUP (Runs when user leaves the page) ---
+    return () => {
+      const timeSpent = Math.round((Date.now() - startTime.current) / 1000);
+      
+      console.log(`[Analytics] Left ${currentPath}. Duration: ${timeSpent}s`);
+
+      // Update the row with the time spent
+      if (currentSessionId.current) {
+        supabase
+          .from('analytics')
+          .update({ duration_seconds: timeSpent })
+          .eq('id', currentSessionId.current)
+          .then(({ error }) => {
+             if (error) console.error("Failed to update duration", error);
+          });
+      }
+    };
+  }, [location]); // Re-run this effect when the route changes
 
   return null;
 };
