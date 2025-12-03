@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,8 @@ import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
+//Analysis Tracker
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        {/* user data tracker*/}
+        <AnalyticsTracker />
+        
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
