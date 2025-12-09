@@ -31,7 +31,7 @@ const projects = [
     title: 'ORVANE',
     description: 'Secure browser extension for end-to-end encrypted messaging using AES with ECDH key exchange, password protection, and a backend for managing secure sessions.',
     image: '',
-    tags: ['HTML/CSS', 'JavaScript', 'Chrome Extension', 'Security', 'Encryption'],
+    tags: ['HTML/CSS', 'JavaScript', 'Chrome Extension', 'Cryptography', 'Security', 'Encryption'],
     links: {
       github: 'https://github.com/TimsTittus/Orvane'
     },
@@ -53,7 +53,7 @@ const projects = [
     title: 'Steg Tool',
     description: 'A steganography tool that allows you to hide and extract messages within images.',
     image: '',
-    tags: ['Python', 'Crytpgraphy', 'Streamlit', 'Security'],
+    tags: ['Python', 'Cryptography', 'Streamlit', 'Security'],
     links: {
       live: 'https://steg-it.streamlit.app/',
       github: 'https://github.com/TimsTittus/Steg_Tool'
@@ -237,9 +237,9 @@ const Projects: React.FC = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-dark-light border border-purple-900/60 rounded-lg overflow-hidden hover:border-purple-700 transition-all duration-300 group"
+              className="bg-dark-light border border-purple-900/60 rounded-lg overflow-hidden hover:border-purple-700 transition-all duration-300 group flex flex-col h-full"
             >
-              <div className="h-48 bg-dark-lighter flex items-center justify-center relative overflow-hidden">
+              <div className="h-48 bg-dark-lighter flex items-center justify-center relative overflow-hidden flex-shrink-0">
                 <span className="text-5xl text-gold/20">{project.image}</span>
                 {project.featured && (
                   <span className="absolute top-3 right-3 bg-purple-600 text-dark px-2 py-1 text-xs font-bold rounded">
@@ -248,9 +248,9 @@ const Projects: React.FC = () => {
                 )}
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4 h-20 overflow-hidden">{project.description}</p>
+                <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map(tag => (

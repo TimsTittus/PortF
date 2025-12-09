@@ -15,39 +15,36 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Steg Tool',
-    description: 'A steganography tool that allows you to hide and extract messages within images.',
+    title: 'Audio Adversarial Attack Generator',
+    description: 'Built a white-box adversarial tool in PyTorch with Wav2Vec2 that uses mathematical optimization to embed inaudible hidden voice commands into audio, deceiving ASR systems while remaining imperceptible to humans.',
     image: '',
-    tags: ['Python', 'Cryptography', 'Streamlit'],
+    tags: ['Python', 'PyTorch', 'Adversarial ML', 'HuggingFace', 'Audio Signal Processing', 'Cybersecurity'],
     links: {
-      live: 'https://steg-it.streamlit.app/',
-      github: 'https://github.com/TimsTittus/Steg_Tool'
+      github: 'https://github.com/TimsTittus/Audio-Adversarial-Attack-Generator'
     },
     featured: true,
     imageUrl: ""
   },
   {
     id: 2,
-    title: 'HomeChime',
-    description: 'Browser based app that, inspired by my family’s anxious wait for my younger brother’s school bus.',
+    title: 'MonkeyPen.ai',
+    description: 'AI-powered tool that converts text into realistic handwritten output, offering 50+ handwriting styles, real-time previews, and multi-format export options.',
     image: '',
-    tags: ['HTML/CSS', 'JavaScript'],
+    tags: ['Python', 'Ai', 'Machine Learning', 'Flask', 'OpenCV', 'TypeScript', 'React'],
     links: {
-      live: 'https://homechime.vercel.app/',
-      github: 'https://github.com/TimsTittus/HomeChime'
+      github: 'https://github.com/TimsTittus/MonkeyPen-Site'
     },
     featured: true,
     imageUrl: ""
   },
   {
     id: 3,
-    title: 'WEBVNR Desktop',
-    description: 'Python + Qt app to test web endpoints for SQLi, XSS, and sensitive data leaks with custom payloads and results.',
+    title: 'ORVANE',
+    description: 'Secure browser extension for end-to-end encrypted messaging using AES with ECDH key exchange, password protection, and a backend for managing secure sessions.',
     image: '',
-    tags: ['Python', 'PyQt', 'Desktop App', 'Security'],
+    tags: ['HTML/CSS', 'JavaScript', 'Chrome Extension', 'Cryptography', 'Security', 'Encryption'],
     links: {
-      live: '',
-      github: 'https://github.com/TimsTittus/WEBVNR'
+      github: 'https://github.com/TimsTittus/Orvane'
     },
     featured: true,
     imageUrl: ""

@@ -127,9 +127,9 @@ const Home: React.FC = () => {
             .map((project) => (
               <div
                 key={project.id}
-                className="bg-dark-light border border-purple-600/10 rounded-lg overflow-hidden hover:border-purple-600/90 transition-all duration-300 group"
+                className="bg-dark-light border border-purple-600/10 rounded-lg overflow-hidden hover:border-purple-600/90 transition-all duration-300 group flex flex-col h-full"
               >
-                <div className="h-48 bg-dark-lighter flex items-center justify-center relative overflow-hidden">
+                <div className="h-48 bg-dark-lighter flex items-center justify-center relative overflow-hidden flex-shrink-0">
                 <span className="text-5xl text-gold/20">{project.image}</span>
                 {project.featured && (
                   <span className="absolute top-3 right-3 bg-purple-600 text-dark px-2 py-1 text-xs font-bold rounded">
@@ -137,9 +137,9 @@ const Home: React.FC = () => {
                   </span>
                 )}
               </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-400 mb-4">{project.description}</p>
+                  <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map(tag => (
                       <span
@@ -150,29 +150,31 @@ const Home: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center space-x-4">
-                    {project.links.github && (
-                      <a 
-                        href={project.links.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                        aria-label="GitHub repository"
-                      >
-                        <Github size={18} />
-                      </a>
-                    )}
-                    {project.links.live && (
-                      <a 
-                        href={project.links.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                        aria-label="Live project"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                    )}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-4">
+                      {project.links.github && (
+                        <a 
+                          href={project.links.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
+                          aria-label="GitHub repository"
+                        >
+                          <Github size={18} />
+                        </a>
+                      )}
+                      {project.links.live && (
+                        <a 
+                          href={project.links.live} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
+                          aria-label="Live project"
+                        >
+                          <ExternalLink size={18} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
