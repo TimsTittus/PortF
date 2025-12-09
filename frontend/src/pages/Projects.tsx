@@ -16,6 +16,17 @@ const projects = [
     featured: true
   },
   {
+    id: 11,
+    title: 'MonkeyPen.ai',
+    description: 'AI-powered tool that converts text into realistic handwritten output, offering 50+ handwriting styles, real-time previews, and multi-format export options.',
+    image: '',
+    tags: ['Python', 'Ai', 'Machine Learning', 'Flask', 'OpenCV', 'TypeScript', 'React'],
+    links: {
+      github: 'https://github.com/TimsTittus/MonkeyPen-Site'
+    },
+    featured: true
+  },
+  {
     id: 4,
     title: 'Asthra-CTF',
     description: 'Developed a complete CTF platform from scratch with my team for the national tech fest Asthra.',
@@ -48,7 +59,7 @@ const projects = [
       live: 'https://homechime.vercel.app/',
       github: 'https://github.com/TimsTittus/HomeChime'
     },
-    featured: true
+    featured: false
   },
   {
     id: 3,
@@ -118,7 +129,7 @@ const projects = [
       live: 'https://github.com/TimsTittus/PortF',
       github: 'https://github.com/TimsTittus/PortF'
     },
-    featured: true
+    featured: false
   }
 ];
 
