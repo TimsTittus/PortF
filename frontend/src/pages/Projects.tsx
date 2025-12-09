@@ -5,6 +5,17 @@ import { Helmet } from 'react-helmet';
 
 const projects = [
   {
+    id: 10,
+    title: 'Audio Adversarial Attack Generator',
+    description: 'Built a white-box adversarial tool in PyTorch with Wav2Vec2 that uses mathematical optimization to embed inaudible hidden voice commands into audio, deceiving ASR systems while remaining imperceptible to humans.',
+    image: '',
+    tags: ['Python', 'PyTorch', 'Adversarial ML', 'HuggingFace', 'Audio Signal Processing', 'Cybersecurity'],
+    links: {
+      github: 'https://github.com/TimsTittus/Audio-Adversarial-Attack-Generator'
+    },
+    featured: true
+  },
+  {
     id: 4,
     title: 'Asthra-CTF',
     description: 'Developed a complete CTF platform from scratch with my team for the national tech fest Asthra.',
