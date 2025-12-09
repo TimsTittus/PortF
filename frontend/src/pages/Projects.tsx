@@ -27,6 +27,17 @@ const projects = [
     featured: true
   },
   {
+    id: 12,
+    title: 'ORVANE',
+    description: 'Secure browser extension for end-to-end encrypted messaging using AES with ECDH key exchange, password protection, and a backend for managing secure sessions.',
+    image: '',
+    tags: ['HTML/CSS', 'JavaScript', 'Chrome Extension', 'Security', 'Encryption'],
+    links: {
+      github: 'https://github.com/TimsTittus/Orvane'
+    },
+    featured: true
+  },
+  {
     id: 4,
     title: 'Asthra-CTF',
     description: 'Developed a complete CTF platform from scratch with my team for the national tech fest Asthra.',
@@ -54,7 +65,7 @@ const projects = [
     title: 'HomeChime',
     description: 'Browser based app that, inspired by my family’s anxious wait for my younger brother’s school bus.',
     image: '',
-    tags: ['HTML/CSS', 'JavaScript'],
+    tags: ['HTML/CSS', 'JavaScript', 'Chrome Extension'],
     links: {
       live: 'https://homechime.vercel.app/',
       github: 'https://github.com/TimsTittus/HomeChime'
