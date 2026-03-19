@@ -74,14 +74,24 @@ export default {
         },
         background: {
           DEFAULT: '#0A0A0A'
-        }
+        },
+        'nb-cream': '#FDF6F0',
+        'nb-purple': '#A688FF',
+        'nb-green': '#55EFC4',
+        'nb-blue': '#00D1FF',
+        'nb-yellow': '#FACC15',
+        'nb-pink': '#F472B6',
+        'nb-black': '#000000',
       },
       boxShadow: {
         'mysterious': '0 10px 30px rgba(0, 0, 0, 0.5)',
-        'enigma': '0 4px 15px rgba(0, 0, 0, 0.7)'
+        'enigma': '0 4px 15px rgba(0, 0, 0, 0.7)',
+        'nb-hard': '4px 4px 0px 0px #000000',
+        'nb-hard-lg': '8px 8px 0px 0px #000000',
       },
       borderColor: {
-        'dark-border': 'rgba(255, 255, 255, 0.05)'
+        'dark-border': 'rgba(255, 255, 255, 0.05)',
+        'nb-black': '#000000',
       },
       backgroundImage: {
         'dark-gradient': 'linear-gradient(to right, #0E0E0E, #1A1A1A)',

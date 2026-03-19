@@ -156,50 +156,54 @@ const Experience: React.FC = () => {
   return (
     <div className="container mx-auto max-w-5xl">
       <section className="py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Professional Experience</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6">Experience</h1>
+          <p className="text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
             A detailed overview of my professional journey, skills, and expertise.
           </p>
         </div>
-        
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Building className="mr-2 text-purple-600" />
+
+        <div className="mb-24">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-12 flex items-center">
+            <div className="p-3 bg-nb-purple border-4 border-nb-black shadow-nb-hard mr-6">
+              <Building size={32} strokeWidth={3} />
+            </div>
             Work Experience
           </h2>
-          
-          <div className="space-y-8">
+
+          <div className="space-y-12">
             {workExperience.map((job, index) => (
-              <div 
-                key={job.id} 
-                className="relative p-6 bg-dark-light border border-gold/10 rounded-lg"
+              <div
+                key={job.id}
+                className="group relative"
               >
-                {index < workExperience.length - 1 && (
-                  <div className="absolute bottom-0 left-8 w-0.5 h-8 bg-gold/20 -mb-8"></div>
-                )}
-                
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <div className="md:w-1/3">
-                    <h3 className="text-xl font-bold">{job.title}</h3>
-                    <div className="flex items-center text-purple-600 mt-1">
-                      <Building size={16} className="mr-1" />
-                      <span>{job.company}</span>
+                <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
+                <div className="relative bg-white border-4 border-nb-black p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all">
+                  <div className="flex flex-col md:flex-row md:items-start gap-8">
+                    <div className="md:w-1/3">
+                      <h3 className="text-3xl font-black uppercase tracking-tight text-nb-black">{job.title}</h3>
+                      <div className="flex items-center text-nb-purple font-black uppercase text-sm mt-3">
+                        <Building size={18} className="mr-2" strokeWidth={3} />
+                        <span>{job.company}</span>
+                      </div>
+                      <div className="flex items-center text-nb-black/60 font-bold text-sm mt-2">
+                        <Calendar size={18} className="mr-2" strokeWidth={3} />
+                        <span>{job.period}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center text-gray-400 mt-1">
-                      <Calendar size={16} className="mr-1" />
-                      <span>{job.period}</span>
+
+                    <div className="md:w-2/3">
+                      <p className="text-xl font-bold text-nb-black mb-6 leading-relaxed bg-nb-cream p-4 border-l-4 border-nb-purple">{job.description}</p>
+                      <h4 className="text-lg font-black uppercase mb-4 text-nb-black underline decoration-4 underline-offset-4">Key Responsibilities:</h4>
+                      <ul className="space-y-3">
+                        {job.responsibilities.map((responsibility, i) => (
+                          <li key={i} className="flex items-start gap-3 text-nb-black font-medium leading-relaxed">
+                            <span className="mt-1 w-2 h-2 bg-nb-black flex-shrink-0"></span>
+                            {responsibility}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                  
-                  <div className="md:w-2/3">
-                    <p className="text-gray-300 mb-4">{job.description}</p>
-                    <h4 className="font-bold mb-2">Key Responsibilities:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-400">
-                      {job.responsibilities.map((responsibility, i) => (
-                        <li key={i}>{responsibility}</li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -207,76 +211,73 @@ const Experience: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Volunteering Experience</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A detailed overview of my volunteering journey, skills, and networks.
-          </p>
-        </div>
-        
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Building className="mr-2 text-purple-600" />
-            Volunteering Experience
+        <div className="mb-24">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-12 flex items-center">
+            <div className="p-3 bg-nb-green border-4 border-nb-black shadow-nb-hard mr-6">
+              <Building size={32} strokeWidth={3} />
+            </div>
+            Volunteering
           </h2>
-          
-          <div className="space-y-8">
-            {volunteeringExperience.map((job, index) => (
-              <div 
-                key={job.id} 
-                className="relative p-6 bg-dark-light border border-gold/10 rounded-lg"
+
+          <div className="grid grid-cols-1 gap-12">
+            {volunteeringExperience.map((job) => (
+              <div
+                key={job.id}
+                className="group relative"
               >
-                {index < volunteeringExperience.length - 1 && (
-                  <div className="absolute bottom-0 left-8 w-0.5 h-8 bg-gold/20 -mb-8"></div>
-                )}
-                
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <div className="md:w-1/3">
-                    <h3 className="text-xl font-bold">{job.title}</h3>
-                    <div className="flex items-center text-purple-600 mt-1">
-                      <Building size={16} className="mr-1" />
-                      <span>{job.company}</span>
+                <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
+                <div className="relative bg-white border-4 border-nb-black p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all">
+                  <div className="flex flex-col md:flex-row md:items-start gap-8">
+                    <div className="md:w-1/3">
+                      <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{job.title}</h3>
+                      <div className="flex items-center text-nb-green font-black uppercase text-sm mt-3">
+                        <Building size={18} className="mr-2" strokeWidth={3} />
+                        <span>{job.company}</span>
+                      </div>
+                      <div className="flex items-center text-nb-black/60 font-bold text-sm mt-2">
+                        <Calendar size={18} className="mr-2" strokeWidth={3} />
+                        <span>{job.period}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center text-gray-400 mt-1">
-                      <Calendar size={16} className="mr-1" />
-                      <span>{job.period}</span>
+
+                    <div className="md:w-2/3">
+                      <p className="text-lg font-bold text-nb-black mb-4 leading-relaxed">{job.description}</p>
+                      <ul className="grid grid-cols-1 gap-2">
+                        {job.responsibilities.map((responsibility, i) => (
+                          <li key={i} className="text-nb-black/70 font-bold text-sm bg-nb-cream px-3 py-1 border-2 border-nb-black">
+                            {responsibility}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                  
-                  <div className="md:w-2/3">
-                    <p className="text-gray-300 mb-4">{job.description}</p>
-                    <h4 className="font-bold mb-2">Key Responsibilities:</h4>
-                    <ul className="list-disc list-inside space-y-1 text-gray-400">
-                      {job.responsibilities.map((responsibility, i) => (
-                        <li key={i}>{responsibility}</li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Award className="mr-2 text-purple-600" />
+
+        <div className="mb-24">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-12 flex items-center">
+            <div className="p-3 bg-nb-yellow border-4 border-nb-black shadow-nb-hard mr-6">
+              <Award size={32} strokeWidth={3} />
+            </div>
             Skills & Expertise
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Technical Skills</h3>
-              <div className="space-y-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="p-8 bg-white border-4 border-nb-black shadow-nb-hard">
+              <h3 className="text-3xl font-black uppercase tracking-tight mb-8 text-nb-black underline decoration-8 decoration-nb-purple underline-offset-4">Technical</h3>
+              <div className="space-y-8">
                 {skills.technical.map((skill) => (
                   <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
+                    <div className="flex justify-between mb-2 font-black uppercase tracking-tight text-lg">
                       <span>{skill.name}</span>
-                      <span className="text-purple-600">{skill.level}%</span>
+                      <span>{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-dark-lighter rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-purple-400"
+                    <div className="h-6 bg-nb-cream border-4 border-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                      <div
+                        className="h-full bg-nb-purple border-r-4 border-nb-black"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -284,71 +285,66 @@ const Experience: React.FC = () => {
                 ))}
               </div>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Design Skills</h3>
-              <div className="space-y-4">
-                {skills.design.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
-                      <span>{skill.name}</span>
-                      <span className="text-purple-600">{skill.level}%</span>
+
+            <div className="space-y-12">
+              <div className="p-8 bg-white border-4 border-nb-black shadow-nb-hard">
+                <h3 className="text-2xl font-black uppercase tracking-tight mb-6 text-nb-black underline decoration-8 decoration-nb-yellow underline-offset-4">Design</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {skills.design.map((skill) => (
+                    <div key={skill.name} className="p-4 bg-nb-yellow border-2 border-nb-black font-black uppercase text-xs text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                      {skill.name} - {skill.level}%
                     </div>
-                    <div className="h-2 bg-dark-lighter rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-purple-400"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-              
-              <h3 className="text-xl font-semibold mb-4 mt-8">Soft Skills</h3>
-              <div className="space-y-4">
-                {skills.soft.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
-                      <span>{skill.name}</span>
-                      <span className="text-purple-600">{skill.level}%</span>
+
+              <div className="p-8 bg-white border-4 border-nb-black shadow-nb-hard">
+                <h3 className="text-2xl font-black uppercase tracking-tight mb-6 text-nb-black underline decoration-8 decoration-nb-green underline-offset-4">Soft Skills</h3>
+                <div className="flex flex-wrap gap-3">
+                  {skills.soft.map((skill) => (
+                    <div key={skill.name} className="px-4 py-2 bg-nb-green border-2 border-nb-black font-black uppercase text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                      {skill.name}
                     </div>
-                    <div className="h-2 bg-dark-lighter rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-purple-400"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-        <div>
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <BookOpen className="mr-2 text-purple-600" />
-            Education & Certifications
+
+        <div className="mb-12">
+          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-12 flex items-center">
+            <div className="p-3 bg-nb-blue border-4 border-nb-black shadow-nb-hard mr-6">
+              <BookOpen size={32} strokeWidth={3} />
+            </div>
+            Education
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
-              <h3 className="text-xl font-bold">BTech in ComputerScience & Engineering(Cybersecurity)</h3>
-              <p className="text-purple-600">SJCET Palai • 2023-2027</p>
-              <p className="text-gray-400 mt-2">
-                Specialized in cybersecurity, including ethical hacking, network security, cryptography, and secure software design.
-                Developed expertise in algorithms, data structures, and software engineering principles, while gaining hands-on experience in vulnerability analysis, penetration testing, and defense strategies.
-              </p>
-            </div>
 
-            <div className="p-6 bg-dark-light border border-gold/10 rounded-lg">
-              <h3 className="text-xl font-bold">Pursuing Minor Degree in Robotics & Automation</h3>
-              <p className="text-purple-600">SJCET Palai • 2023-2027</p>
-              <p className="text-gray-400 mt-2">
-                Specialized in robotics and automation, including robotic system design, control algorithms, sensor integration, and autonomous navigation.
-              </p>
-            </div>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {[
+              {
+                title: "BTech in Computer Science & Engineering (Cybersecurity)",
+                loc: "SJCET Palai • 2023-2027",
+                desc: "Specialized in cybersecurity, including ethical hacking, network security, cryptography, and secure software design.",
+                color: "bg-nb-purple"
+              },
+              {
+                title: "Minor in Robotics & Automation",
+                loc: "SJCET Palai • 2023-2027",
+                desc: "Specialized in robotic system design, control algorithms, sensor integration, and autonomous navigation.",
+                color: "bg-nb-blue"
+              }
+            ].map((edu) => (
+              <div key={edu.title} className="group relative">
+                <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
+                <div className={`relative bg-white border-4 border-nb-black p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full`}>
+                  <div className={`w-12 h-12 ${edu.color} border-2 border-nb-black mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}></div>
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{edu.title}</h3>
+                  <p className="text-nb-purple font-black uppercase text-sm mt-2">{edu.loc}</p>
+                  <p className="text-nb-black font-medium mt-6 text-lg leading-relaxed">{edu.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

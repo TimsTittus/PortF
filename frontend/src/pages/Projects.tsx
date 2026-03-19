@@ -211,21 +211,22 @@ const Projects: React.FC = () => {
 
       {/* Projects Section */}
       <section className="py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">My Projects</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6">My <span className="text-nb-purple">Projects</span></h1>
+          <p className="text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
             A curated selection of my projects showcasing my skills in development, design, and problem-solving.
           </p>
         </div>
 
-        <div className="flex justify-center flex-wrap gap-2 mb-10">
+        <div className="flex justify-center flex-wrap gap-4 mb-16">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${activeFilter === category
-                ? 'bg-purple-700 text-dark border-purple-700'
-                : 'bg-dark-light text-gray-400 hover:text-purple-400 hover:bg-dark-lighter hover:scale-110 hover:border-purple-700'
+              className={`px-6 py-2 border-2 border-nb-black font-bold uppercase tracking-tight transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] 
+              ${activeFilter === category
+                  ? 'bg-nb-purple text-nb-black'
+                  : 'bg-white text-nb-black hover:bg-nb-yellow'
                 }`}
             >
               {category}
@@ -233,59 +234,60 @@ const Projects: React.FC = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
-              className="bg-dark-light border border-purple-900/60 rounded-lg overflow-hidden hover:border-purple-700 transition-all duration-300 group flex flex-col h-full"
+              className="group relative h-full"
             >
-              <div className="h-48 bg-dark-lighter flex items-center justify-center relative overflow-hidden flex-shrink-0">
-                <span className="text-5xl text-gold/20">{project.image}</span>
-                {project.featured && (
-                  <span className="absolute top-3 right-3 bg-purple-600 text-dark px-2 py-1 text-xs font-bold rounded">
-                    Featured
-                  </span>
-                )}
-              </div>
-
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 text-xs bg-dark rounded text-gray-400">
-                      {tag}
+              <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
+              <div className="relative bg-white border-4 border-nb-black h-full flex flex-col group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all overflow-hidden">
+                <div className={`h-48 ${idx % 3 === 0 ? 'bg-nb-purple' : idx % 3 === 1 ? 'bg-nb-green' : 'bg-nb-blue'} border-b-4 border-nb-black flex items-center justify-center relative overflow-hidden flex-shrink-0`}>
+                  <span className="text-6xl drop-shadow-[4px_4px_0px_#000]">{project.image || '🚀'}</span>
+                  {project.featured && (
+                    <span className="absolute top-3 right-3 bg-nb-yellow border-2 border-nb-black text-nb-black px-3 py-1 text-xs font-black uppercase">
+                      Featured
                     </span>
-                  ))}
+                  )}
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    {/* Only show icon if link exists */}
-                    {project.links.github && (
-                      <a
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                        aria-label="GitHub repository"
-                      >
-                        <Github size={18} />
-                      </a>
-                    )}
-                    {/* Only show icon if link exists */}
-                    {project.links.live && (
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                        aria-label="Live project"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                    )}
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-black uppercase tracking-tight mb-3 text-nb-black">{project.title}</h3>
+                  <p className="text-nb-black font-medium mb-6 flex-grow leading-relaxed">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, tIdx) => (
+                      <span key={tag} className={`px-3 py-1 text-xs font-black uppercase border-2 border-nb-black ${tIdx % 2 === 0 ? 'bg-nb-cream' : 'bg-nb-yellow'} text-nb-black`}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t-2 border-nb-black/10">
+                    <div className="flex items-center space-x-6">
+                      {project.links.github && (
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-nb-black hover:text-nb-purple transition-all hover:scale-110"
+                          aria-label="GitHub repository"
+                        >
+                          <Github size={24} strokeWidth={3} />
+                        </a>
+                      )}
+                      {project.links.live && (
+                        <a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-nb-black hover:text-nb-purple transition-all hover:scale-110"
+                          aria-label="Live project"
+                        >
+                          <ExternalLink size={24} strokeWidth={3} />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -295,25 +297,30 @@ const Projects: React.FC = () => {
       </section>
 
       {/* Achievements Section*/}
-      <section className="py-12 border-t border-purple-900/40 mt-12" id="achievements">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Achievements</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+      <section className="py-24 border-t-4 border-nb-black mt-12" id="achievements">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-nb-black mb-4">Achievements</h2>
+          <p className="text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
             A glimpse of milestones and recognitions I’ve earned along my journey.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {achievements.map(ach => (
             <article
               key={ach.id}
-              className="bg-dark-light border border-purple-900/60 rounded-lg p-6 hover:border-purple-700 transition-all duration-300"
+              className="group relative"
             >
-              <header className="flex items-center space-x-3 mb-4">
-                <span aria-hidden="true">{ach.icon}</span>
-                <h3 className="text-lg font-semibold">{ach.title}</h3>
-              </header>
-              <p className="text-gray-400">{ach.description}</p>
+              <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
+              <div className="relative bg-white border-4 border-nb-black p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full">
+                <header className="flex items-center space-x-4 mb-4">
+                  <div className="p-3 bg-nb-yellow border-2 border-nb-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                    {ach.icon}
+                  </div>
+                  <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{ach.title}</h3>
+                </header>
+                <p className="text-nb-black font-medium text-lg leading-relaxed">{ach.description}</p>
+              </div>
             </article>
           ))}
         </div>

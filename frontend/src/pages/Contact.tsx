@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, Github, Linkedin, Twitter } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface FormState {
@@ -21,9 +21,9 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  const { name, value } = e.target;
-  setFormData(prev => ({ ...prev, [name]: value }));
-};
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,183 +52,150 @@ const Contact: React.FC = () => {
   return (
     <div className="container mx-auto max-w-6xl">
       <section className="py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-purple-500 text-4xl font-bold mb-4">Get In Touch</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6">Get In <span className="text-nb-purple">Touch</span></h1>
+          <p className="text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
             Feel free to reach out if you have any questions, project inquiries, or just want to say hello.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="group relative">
+              <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 transition-all"></div>
+              <form onSubmit={handleSubmit} className="relative bg-white border-4 border-nb-black p-8 md:p-12 space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div>
+                    <label htmlFor="name" className="block mb-3 text-lg font-black uppercase tracking-tight text-nb-black">Your Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      autoComplete="off"
+                      required
+                      className="w-full px-4 py-4 bg-nb-cream border-4 border-nb-black font-bold text-nb-black focus:outline-none focus:bg-white transition-all placeholder:text-nb-black/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px]"
+                      placeholder="Bruce Wayne"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block mb-3 text-lg font-black uppercase tracking-tight text-nb-black">Your Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      autoComplete="off"
+                      required
+                      className="w-full px-4 py-4 bg-nb-cream border-4 border-nb-black font-bold text-nb-black focus:outline-none focus:bg-white transition-all placeholder:text-nb-black/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px]"
+                      placeholder="bruce@wayne.com"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label htmlFor="name" className="block mb-2 text-sm font-medium">Your Name</label>
+                  <label htmlFor="subject" className="block mb-3 text-lg font-black uppercase tracking-tight text-nb-black">Subject</label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
                     autoComplete="off"
                     required
-                    className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300"
-                    placeholder="Enter your name"
+                    className="w-full px-4 py-4 bg-nb-cream border-4 border-nb-black font-bold text-nb-black focus:outline-none focus:bg-white transition-all placeholder:text-nb-black/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px]"
+                    placeholder="Project Inquiry"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                  <label htmlFor="message" className="block mb-3 text-lg font-black uppercase tracking-tight text-nb-black">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
                     autoComplete="off"
                     required
-                    className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300"
-                    placeholder="example@example.com"
+                    rows={6}
+                    className="w-full px-4 py-4 bg-nb-cream border-4 border-nb-black font-bold text-nb-black focus:outline-none focus:bg-white transition-all placeholder:text-nb-black/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] resize-none"
+                    placeholder="Your message here..."
                   />
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="subject" className="block mb-2 text-sm font-medium">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  autoComplete="off"
-                  required
-                  className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300"
-                  placeholder="Project Inquiry"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block mb-2 text-sm font-medium">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  autoComplete="off"
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-dark-light border border-purple-950 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-colors duration-300 resize-none"
-                  placeholder="Your message here..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`inline-flex items-center px-6 py-3 ${
-                  isSubmitting ? 'bg-purple-950 cursor-not-allowed' : 'bg-purple-800 hover:bg-purple-500'
-                } text-dark font-medium rounded transition-colors duration-300`}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-                <Send className="ml-2 h-4 w-4" />
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group relative inline-block w-full"
+                >
+                  <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
+                  <div className={`relative w-full py-5 ${isSubmitting ? 'bg-nb-black/20' : 'bg-nb-purple'} border-4 border-nb-black text-nb-black font-black uppercase text-xl flex items-center justify-center gap-3 transition-all hover:-translate-x-1 hover:-translate-y-1`}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    <Send className={isSubmitting ? 'animate-pulse' : 'group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'} strokeWidth={3} />
+                  </div>
+                </button>
+              </form>
+            </div>
           </div>
 
-          <div className="lg:col-span-2">
-            <div className="p-6 bg-dark-light border border-purple-950 rounded-lg h-full">
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
-                    <Mail size={20} />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-medium">Email</h3>
-                    <a href="mailto:timstittus1@gmail.com" className="text-gray-400 hover:text-purple-600 transition-colors duration-300">
-                      timstittus1@gmail.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
-                    <Phone size={20} />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-medium">Phone</h3>
-                    <a href="tel:+91 9946116910" className="text-gray-400 hover:text-purple-600 transition-colors duration-300">
-                      +91 9946116910
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
-                    <MapPin size={20} />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-medium">Location</h3>
-                    <p className="text-gray-400">Cherupuzha(PO), Kannur(DIST), Kerala, India</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-purple-600">
-                    <Clock size={20} />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-medium">Working Hours</h3>
-                    <p className="text-gray-400">Mon - Fri: 9:00 AM - 5:00 PM</p>
-                  </div>
+          <div className="lg:col-span-2 space-y-10">
+            <div className="group relative">
+              <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 transition-all"></div>
+              <div className="relative bg-white border-4 border-nb-black p-8">
+                <h2 className="text-3xl font-black uppercase tracking-tight mb-8 text-nb-black border-b-4 border-nb-black pb-4">Contact Info</h2>
+                <div className="space-y-8">
+                  {[
+                    { icon: <Mail size={24} strokeWidth={3} />, label: "Email", value: "timstittus1@gmail.com", href: "mailto:timstittus1@gmail.com", color: "bg-nb-purple" },
+                    { icon: <Phone size={24} strokeWidth={3} />, label: "Phone", value: "+91 9946116910", href: "tel:+91 9946116910", color: "bg-nb-green" },
+                    { icon: <MapPin size={24} strokeWidth={3} />, label: "Location", value: "Kannur, Kerala, India", color: "bg-nb-blue" },
+                    { icon: <Clock size={24} strokeWidth={3} />, label: "Hours", value: "Mon - Fri: 9AM - 5PM", color: "bg-nb-yellow" }
+                  ].map((info) => (
+                    <div key={info.label} className="flex items-start gap-6">
+                      <div className={`flex-shrink-0 w-12 h-12 ${info.color} border-2 border-nb-black flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                        {info.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-black uppercase text-xs tracking-widest text-nb-black/50 mb-1">{info.label}</h3>
+                        {info.href ? (
+                          <a href={info.href} className="text-xl font-bold text-nb-black hover:text-nb-purple transition-all underline decoration-2 underline-offset-4">
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-xl font-bold text-nb-black">{info.value}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="mt-8 pt-8 border-t border-gold/10">
-                <h3 className="font-medium mb-4">Connect With Me</h3>
-                <div className="flex space-x-4">
-                  <a 
-                    href="https://github.com/TimsTittus" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/in/tims-tittus/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </a>
-                  <a 
-                    href="https://x.com/timstittus" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                  >  
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1200 1227.92" fill="currentColor">
-                    <path d="M714.28 586.56 1166.36 0H1060.6L667.1 505.21 346.2 0H0l475.29 708.95L0 1227.92h105.76l418.15-547.42 336.33 547.42H1200L714.28 586.56ZM579.35 694.65l-48.45-75.06L155.36 82.6h145.21l269.53 417.75 48.46 75.06 393.5 610.88H866.39Z"/>
-                    </svg>
-                  </a>
-                  <a 
-                    href="https://medium.com/@adonis369" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-dark-lighter rounded-full flex items-center justify-center text-gray-400 hover:text-purple-600 transition-colors duration-300"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1043.63 592.71" fill="currentColor">
-                    <path d="M588.67 296.7c0 163.84-131.9 296.7-294.33 296.7S0 460.54 0 296.7 131.9 0 294.34 0s294.33 132.86 294.33 296.7zM730.07 296.7c0 155.16-65.27 280.94-145.83 280.94s-145.83-125.79-145.83-280.94S503.68 15.76 584.24 15.76 730.07 141.54 730.07 296.7zM1043.63 296.7c0 145.26-32.02 263.03-71.48 263.03s-71.48-117.77-71.48-263.03 32.02-263.03 71.48-263.03 71.48 117.77 71.48 263.03z"/>
-                    </svg>
-                  </a>
+            </div>
+
+            <div className="group relative">
+              <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 transition-all"></div>
+              <div className="relative bg-nb-yellow border-4 border-nb-black p-8">
+                <h3 className="text-2xl font-black uppercase tracking-tight mb-6 text-nb-black">Social Connect</h3>
+                <div className="flex flex-wrap gap-4">
+                  {[
+                    { icon: <Github size={24} strokeWidth={3} />, href: "https://github.com/TimsTittus" },
+                    { icon: <Linkedin size={24} strokeWidth={3} />, href: "https://www.linkedin.com/in/tims-tittus/" },
+                    { icon: <Twitter size={24} strokeWidth={3} />, href: "https://x.com/timstittus" }
+                  ].map((social, idx) => (
+                    <a
+                      key={idx}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-14 h-14 bg-white border-2 border-nb-black flex items-center justify-center text-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </div>
