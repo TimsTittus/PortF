@@ -93,10 +93,10 @@ const About: React.FC = () => {
           <div className="md:w-2/3">
             <div className="space-y-16">
               <div>
-                <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-8">
+                <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-8 px-4 sm:px-0">
                   About <span className="text-nb-purple">Me</span>
                 </h1>
-                <div className="space-y-6 text-xl font-bold text-nb-black leading-relaxed">
+                <div className="space-y-6 text-lg sm:text-xl font-bold text-nb-black leading-relaxed px-4 sm:px-0">
                   <p>
                     I’m a full-stack developer, UI/UX designer, and public speaker with expertise in networking, web development, and cybersecurity. I’ve contributed to ethical hacking projects, mentorship programs, and collaborative applications that combine security with usability.
                   </p>
@@ -109,7 +109,7 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="px-4 sm:px-0">
                 <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-8">What I <span className="bg-nb-green px-2 border-2 border-nb-black">Do</span></h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {[
@@ -120,7 +120,7 @@ const About: React.FC = () => {
                   ].map((item) => (
                     <div key={item.title} className="group relative">
                       <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
-                      <div className="relative bg-white border-4 border-nb-black p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full">
+                      <div className="relative bg-white border-4 border-nb-black p-6 sm:p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full">
                         <div className={`w-14 h-14 ${item.color} border-2 border-nb-black flex items-center justify-center text-nb-black mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
                           {item.icon}
                         </div>
@@ -134,7 +134,7 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="px-4 sm:px-0">
                 <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-8">Education</h2>
                 <div className="space-y-8">
                   {[
@@ -151,7 +151,7 @@ const About: React.FC = () => {
                       color: "border-nb-yellow"
                     }
                   ].map((edu) => (
-                    <div key={edu.title} className={`p-8 bg-white border-4 border-nb-black ${edu.color} shadow-nb-hard`}>
+                    <div key={edu.title} className={`p-6 sm:p-8 bg-white border-4 border-nb-black ${edu.color} shadow-nb-hard`}>
                       <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{edu.title}</h3>
                       <p className="text-nb-purple font-black uppercase text-sm mt-1">{edu.loc}</p>
                       <p className="text-nb-black font-medium mt-4 text-lg leading-relaxed">{edu.desc}</p>

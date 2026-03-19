@@ -78,15 +78,38 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-[72px] left-0 right-0 bg-nb-cream border-b-4 border-nb-black animate-fade-in shadow-nb-hard">
-          <nav className="container mx-auto px-4 py-6">
+      <div
+        className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-nb-black/60 backdrop-blur-sm"
+          onClick={() => setIsMenuOpen(false)}
+        />
+
+        {/* Menu Content */}
+        <div
+          className={`absolute right-0 top-0 bottom-0 w-[80%] max-w-[320px] bg-nb-cream border-l-4 border-nb-black shadow-[-8px_0px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 ease-in-out flex flex-col ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+        >
+          <div className="p-6 flex justify-between items-center border-b-4 border-nb-black">
+            <span className="font-black uppercase tracking-widest text-sm">Menu</span>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="p-1 border-2 border-nb-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[1px] active:translate-y-[1px]"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          <nav className="flex-grow overflow-y-auto p-6">
             <ul className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className={`block py-3 px-4 font-bold uppercase border-2 border-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all
+                    className={`block py-4 px-6 font-black uppercase text-xl border-4 border-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:shadow-none active:translate-x-[2px] active:translate-y-[2px]
                       ${location.pathname === link.path ? 'bg-nb-purple text-nb-black' : 'bg-white text-nb-black hover:bg-nb-yellow'}
                     `}
                   >
@@ -96,8 +119,12 @@ const Navbar: React.FC = () => {
               ))}
             </ul>
           </nav>
+
+          <div className="p-6 border-t-4 border-nb-black bg-nb-yellow">
+            <p className="text-sm font-black uppercase tracking-tight">Tims Tittus &copy; {new Date().getFullYear()}</p>
+          </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };

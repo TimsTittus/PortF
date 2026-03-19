@@ -52,9 +52,9 @@ const Contact: React.FC = () => {
   return (
     <div className="container mx-auto max-w-6xl">
       <section className="py-12">
-        <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6">Get In <span className="text-nb-purple">Touch</span></h1>
-          <p className="text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
+        <div className="text-center mb-16 px-4">
+          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6">Get In <span className="text-nb-purple">Touch</span></h1>
+          <p className="text-lg sm:text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
             Feel free to reach out if you have any questions, project inquiries, or just want to say hello.
           </p>
         </div>
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-3">
             <div className="group relative">
               <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 transition-all"></div>
-              <form onSubmit={handleSubmit} className="relative bg-white border-4 border-nb-black p-8 md:p-12 space-y-8">
+              <form onSubmit={handleSubmit} className="relative bg-white border-4 border-nb-black p-6 sm:p-8 md:p-12 space-y-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
                     <label htmlFor="name" className="block mb-3 text-lg font-black uppercase tracking-tight text-nb-black">Your Name</label>
@@ -143,8 +143,8 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-2 space-y-10">
             <div className="group relative">
               <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 transition-all"></div>
-              <div className="relative bg-white border-4 border-nb-black p-8">
-                <h2 className="text-3xl font-black uppercase tracking-tight mb-8 text-nb-black border-b-4 border-nb-black pb-4">Contact Info</h2>
+              <div className="relative bg-white border-4 border-nb-black p-6 sm:p-8">
+                <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-8 text-nb-black border-b-4 border-nb-black pb-4">Contact Info</h2>
                 <div className="space-y-8">
                   {[
                     { icon: <Mail size={24} strokeWidth={3} />, label: "Email", value: "timstittus1@gmail.com", href: "mailto:timstittus1@gmail.com", color: "bg-nb-purple" },
@@ -159,11 +159,11 @@ const Contact: React.FC = () => {
                       <div>
                         <h3 className="font-black uppercase text-xs tracking-widest text-nb-black/50 mb-1">{info.label}</h3>
                         {info.href ? (
-                          <a href={info.href} className="text-xl font-bold text-nb-black hover:text-nb-purple transition-all underline decoration-2 underline-offset-4">
+                          <a href={info.href} className="text-lg sm:text-xl font-bold text-nb-black hover:text-nb-purple transition-all underline decoration-2 underline-offset-4 break-all">
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-xl font-bold text-nb-black">{info.value}</p>
+                          <p className="text-lg sm:text-xl font-bold text-nb-black break-all">{info.value}</p>
                         )}
                       </div>
                     </div>
@@ -174,20 +174,20 @@ const Contact: React.FC = () => {
 
             <div className="group relative">
               <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 transition-all"></div>
-              <div className="relative bg-nb-yellow border-4 border-nb-black p-8">
+              <div className="relative bg-nb-yellow border-4 border-nb-black p-6 sm:p-8">
                 <h3 className="text-2xl font-black uppercase tracking-tight mb-6 text-nb-black">Social Connect</h3>
                 <div className="flex flex-wrap gap-4">
                   {[
-                    { icon: <Github size={24} strokeWidth={3} />, href: "https://github.com/TimsTittus" },
-                    { icon: <Linkedin size={24} strokeWidth={3} />, href: "https://www.linkedin.com/in/tims-tittus/" },
-                    { icon: <Twitter size={24} strokeWidth={3} />, href: "https://x.com/timstittus" }
+                    { icon: <Github className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={3} />, href: "https://github.com/TimsTittus" },
+                    { icon: <Linkedin className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={3} />, href: "https://www.linkedin.com/in/tims-tittus/" },
+                    { icon: <Twitter className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={3} />, href: "https://x.com/timstittus" }
                   ].map((social, idx) => (
                     <a
                       key={idx}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-14 h-14 bg-white border-2 border-nb-black flex items-center justify-center text-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+                      className="w-12 h-12 sm:w-14 sm:h-14 bg-white border-2 border-nb-black flex items-center justify-center text-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
                     >
                       {social.icon}
                     </a>

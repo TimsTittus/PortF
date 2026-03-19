@@ -211,9 +211,9 @@ const Projects: React.FC = () => {
 
       {/* Projects Section */}
       <section className="py-12">
-        <div className="text-center mb-16">
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6">My <span className="text-nb-purple">Projects</span></h1>
-          <p className="text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
+        <div className="text-center mb-16 px-4">
+          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6">My <span className="text-nb-purple">Projects</span></h1>
+          <p className="text-lg sm:text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
             A curated selection of my projects showcasing my skills in development, design, and problem-solving.
           </p>
         </div>
@@ -251,9 +251,9 @@ const Projects: React.FC = () => {
                   )}
                 </div>
 
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-black uppercase tracking-tight mb-3 text-nb-black">{project.title}</h3>
-                  <p className="text-nb-black font-medium mb-6 flex-grow leading-relaxed">{project.description}</p>
+                <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                  <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-3 text-nb-black">{project.title}</h3>
+                  <p className="text-nb-black font-medium mb-6 flex-grow leading-relaxed text-sm sm:base">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, tIdx) => (
@@ -298,9 +298,9 @@ const Projects: React.FC = () => {
 
       {/* Achievements Section*/}
       <section className="py-24 border-t-4 border-nb-black mt-12" id="achievements">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-nb-black mb-4">Achievements</h2>
-          <p className="text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-nb-black mb-4">Achievements</h2>
+          <p className="text-lg sm:text-xl font-bold text-nb-black/70 max-w-2xl mx-auto italic">
             A glimpse of milestones and recognitions I’ve earned along my journey.
           </p>
         </div>
@@ -312,14 +312,14 @@ const Projects: React.FC = () => {
               className="group relative"
             >
               <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
-              <div className="relative bg-white border-4 border-nb-black p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full">
+              <div className="relative bg-white border-4 border-nb-black p-6 sm:p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full">
                 <header className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-nb-yellow border-2 border-nb-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="p-2 sm:p-3 bg-nb-yellow border-2 border-nb-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     {ach.icon}
                   </div>
-                  <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{ach.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-nb-black">{ach.title}</h3>
                 </header>
-                <p className="text-nb-black font-medium text-lg leading-relaxed">{ach.description}</p>
+                <p className="text-nb-black font-medium text-base sm:text-lg leading-relaxed">{ach.description}</p>
               </div>
             </article>
           ))}
