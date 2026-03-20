@@ -2,6 +2,13 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { Download, Code, PenTool, Globe, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const About: React.FC = () => {
 
@@ -59,7 +66,7 @@ const About: React.FC = () => {
       </Helmet>
 
       <section className="py-12">
-        <div className="flex flex-col md:flex-row gap-16 items-start">
+        <div className="flex flex-col md:flex-row gap-16 items-start w-full">
           <div className="md:w-1/3 sticky top-24">
             <div className="group relative">
               <div className="absolute inset-0 bg-nb-black translate-x-3 translate-y-3 transition-all"></div>
@@ -90,7 +97,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="md:w-2/3">
+          <div className="w-full md:w-2/3 min-w-0">
             <div className="space-y-16">
               <div>
                 <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-8 px-4 sm:px-0">
@@ -111,26 +118,43 @@ const About: React.FC = () => {
 
               <div className="px-4 sm:px-0">
                 <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-8">What I <span className="bg-nb-green px-2 border-2 border-nb-black">Do</span></h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  {[
-                    { title: "Web Development", desc: "Building responsive and optimized web applications using modern technologies and best practices.", icon: <Code size={28} strokeWidth={3} />, color: "bg-nb-purple" },
-                    { title: "UI/UX Design", desc: "Creating intuitive interfaces and meaningful user experiences that balance form and function.", icon: <PenTool size={28} strokeWidth={3} />, color: "bg-nb-yellow" },
-                    { title: "Cybersecurity", desc: "Securing systems by identifying vulnerabilities, mitigating threats, and ensuring digital trust.", icon: <Globe size={28} strokeWidth={3} />, color: "bg-nb-blue" },
-                    { title: "Leadership", desc: "Active in IEEE SB SJCET, HackTheBox, and more, leading and driving innovation.", icon: <Zap size={28} strokeWidth={3} />, color: "bg-nb-green" }
-                  ].map((item) => (
-                    <div key={item.title} className="group relative">
-                      <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
-                      <div className="relative bg-white border-4 border-nb-black p-6 sm:p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full">
-                        <div className={`w-14 h-14 ${item.color} border-2 border-nb-black flex items-center justify-center text-nb-black mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
-                          {item.icon}
-                        </div>
-                        <h3 className="text-2xl font-black uppercase tracking-tight mb-3 text-nb-black">{item.title}</h3>
-                        <p className="text-nb-black font-medium leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
+                <div className="relative group/carousel max-w-full overflow-hidden">
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      loop: true,
+                    }}
+                    className="w-full"
+                  >
+                    <CarouselContent className="-ml-4 sm:-ml-8">
+                      {[
+                        { title: "Web Development", desc: "Building responsive and optimized web applications using modern technologies and best practices.", icon: <Code size={28} strokeWidth={3} />, color: "bg-nb-purple" },
+                        { title: "UI/UX Design", desc: "Creating intuitive interfaces and meaningful user experiences that balance form and function.", icon: <PenTool size={28} strokeWidth={3} />, color: "bg-nb-yellow" },
+                        { title: "Cybersecurity", desc: "Securing systems by identifying vulnerabilities, mitigating threats, and ensuring digital trust.", icon: <Globe size={28} strokeWidth={3} />, color: "bg-nb-blue" },
+                        { title: "Leadership", desc: "Active in IEEE SB SJCET, HackTheBox, and more, leading and driving innovation.", icon: <Zap size={28} strokeWidth={3} />, color: "bg-nb-green" }
+                      ].map((item) => (
+                        <CarouselItem key={item.title} className="pl-4 sm:pl-8 basis-full sm:basis-1/2">
+                          <div className="group relative h-full">
+                            <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
+                            <div className="relative bg-white border-4 border-nb-black p-6 sm:p-8 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all h-full">
+                              <div className={`w-14 h-14 ${item.color} border-2 border-nb-black flex items-center justify-center text-nb-black mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+                                {item.icon}
+                              </div>
+                              <h3 className="text-2xl font-black uppercase tracking-tight mb-3 text-nb-black">{item.title}</h3>
+                              <p className="text-nb-black font-medium leading-relaxed">
+                                {item.desc}
+                              </p>
+                            </div>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+
+                    <div className="flex justify-end gap-3 mt-10 px-4 sm:px-0">
+                      <CarouselPrevious className="relative static translate-y-0 bg-white border-2 border-nb-black h-12 w-12 rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-nb-yellow active:shadow-none active:translate-x-[1px] active:translate-y-[1px] transition-all" />
+                      <CarouselNext className="relative static translate-y-0 bg-white border-2 border-nb-black h-12 w-12 rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-nb-yellow active:shadow-none active:translate-x-[1px] active:translate-y-[1px] transition-all" />
                     </div>
-                  ))}
+                  </Carousel>
                 </div>
               </div>
 

@@ -13,6 +13,27 @@
   body {
     @apply bg-[#FDF6F0] text-[#000000] selection:bg-nb-purple/20 selection:text-nb-purple;
   }
+
+  p,
+  li {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  div,
+  span,
+  blockquote,
+  article,
+  section {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }
 
 .page-transition-enter {
