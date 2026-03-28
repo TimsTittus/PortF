@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import { Download, Code, PenTool, Globe, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Download } from 'lucide-react';
+import SEO from '../components/layout/SEO';
+import SectionHeader from '../components/ui/SectionHeader';
+import { services } from '../data/services';
+import { education } from '../data/education';
 import {
   Carousel,
   CarouselContent,
@@ -11,59 +13,12 @@ import {
 } from "@/components/ui/carousel";
 
 const About: React.FC = () => {
-
-  const baseUrl = 'https://timstittus.vercel.app';
-  const pageUrl = `${baseUrl}/about`;
-  const pageTitle = 'About Tims Tittus | CyberSecurity & Engineering';
-  const pageDescription = 'Learn about Tims Tittus, a full-stack developer, UI/UX designer, and public speaker with expertise in networking, web development, and cybersecurity.';
-  const socialImageUrl = `${baseUrl}/assets/hiddenimage.png`;
-
   return (
     <div className="container mx-auto max-w-5xl">
-
-      {/* 3. Add the Helmet component for SEO */}
-      <Helmet>
-        {/* --- Primary Meta Tags --- */}
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="canonical" href={pageUrl} />
-
-        {/* --- Open Graph / Social Media --- */}
-        <meta property="og:type" content="profile" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={socialImageUrl} />
-
-        {/* --- Twitter Card --- */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={pageUrl} />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={socialImageUrl} />
-
-        {/* --- Structured Data (JSON-LD) --- */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            "name": pageTitle,
-            "description": pageDescription,
-            "url": pageUrl,
-            "mainEntity": {
-              "@type": "Person",
-              "name": "Tims Tittus",
-              "jobTitle": "Engineering CyberSecurity Student & Polymath",
-              "url": baseUrl,
-              "image": socialImageUrl,
-              "sameAs": [
-                "https://github.com/TimsTittus",
-                "https://www.linkedin.com/in/tims-tittus/"
-              ]
-            }
-          })}
-        </script>
-      </Helmet>
+      <SEO 
+        title="About" 
+        description="Learn about Tims Tittus, a full-stack developer, UI/UX designer, and public speaker with expertise in networking, web development, and cybersecurity."
+      />
 
       <section className="py-12">
         <div className="flex flex-col md:flex-row gap-16 items-start w-full">
@@ -100,9 +55,12 @@ const About: React.FC = () => {
           <div className="w-full md:w-2/3 min-w-0">
             <div className="space-y-16">
               <div>
-                <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-8 px-4 sm:px-0">
-                  About <span className="text-nb-purple">Me</span>
-                </h1>
+                <SectionHeader 
+                  title="About" 
+                  highlight="Me" 
+                  className="text-left mb-8 px-4 sm:px-0"
+                  titleClassName="text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black"
+                />
                 <div className="space-y-6 text-lg sm:text-xl font-bold text-nb-black leading-relaxed px-4 sm:px-0">
                   <p>
                     I’m a full-stack developer, UI/UX designer, and public speaker with expertise in networking, web development, and cybersecurity. I’ve contributed to ethical hacking projects, mentorship programs, and collaborative applications that combine security with usability.
@@ -127,12 +85,7 @@ const About: React.FC = () => {
                     className="w-full"
                   >
                     <CarouselContent className="-ml-4 sm:-ml-8">
-                      {[
-                        { title: "Web Development", desc: "Building responsive and optimized web applications using modern technologies and best practices.", icon: <Code size={28} strokeWidth={3} />, color: "bg-nb-purple" },
-                        { title: "UI/UX Design", desc: "Creating intuitive interfaces and meaningful user experiences that balance form and function.", icon: <PenTool size={28} strokeWidth={3} />, color: "bg-nb-yellow" },
-                        { title: "Cybersecurity", desc: "Securing systems by identifying vulnerabilities, mitigating threats, and ensuring digital trust.", icon: <Globe size={28} strokeWidth={3} />, color: "bg-nb-blue" },
-                        { title: "Leadership", desc: "Active in IEEE SB SJCET, HackTheBox, and more, leading and driving innovation.", icon: <Zap size={28} strokeWidth={3} />, color: "bg-nb-green" }
-                      ].map((item) => (
+                      {services.map((item) => (
                         <CarouselItem key={item.title} className="pl-4 sm:pl-8 basis-full sm:basis-1/2">
                           <div className="group relative h-full">
                             <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
@@ -161,20 +114,7 @@ const About: React.FC = () => {
               <div className="px-4 sm:px-0">
                 <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-8">Education</h2>
                 <div className="space-y-8">
-                  {[
-                    {
-                      title: "BTech in Computer Science (Cybersecurity)",
-                      loc: "SJCET Palai • 2023-2027",
-                      desc: "Specialized in cybersecurity, ethical hacking, and secure software design.",
-                      color: "border-nb-purple"
-                    },
-                    {
-                      title: "Higher Secondary Education",
-                      loc: "St Marys Convent School • 2021-2023",
-                      desc: "Focused on Mathematics, Physics, and Computer Science.",
-                      color: "border-nb-yellow"
-                    }
-                  ].map((edu) => (
+                  {education.filter(edu => edu.title.includes("Higher") || edu.title.includes("Engineering")).map((edu) => (
                     <div key={edu.title} className={`p-6 sm:p-8 bg-white border-4 border-nb-black ${edu.color} shadow-nb-hard`}>
                       <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{edu.title}</h3>
                       <p className="text-nb-purple font-black uppercase text-sm mt-1">{edu.loc}</p>

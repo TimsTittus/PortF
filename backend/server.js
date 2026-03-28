@@ -1,10 +1,10 @@
 import express from 'express';
-import nodemailer from 'nodemailer';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import rateLimit from 'express-rate-limit';
+import { sendContactEmail } from './services/emailService.js';
 
 dotenv.config();
 
@@ -46,28 +46,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    const mailOptions = {
-      from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_USER,
-      subject: `Contact Form: ${subject}`,
-      html: `
-        <h2>New Message from Contact Form</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    await sendContactEmail(name, email, subject, message);
     res.status(200).json({ success: 'Email sent successfully.' });
   } catch (error) {
     console.error('Error sending email:', {
