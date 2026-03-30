@@ -22,7 +22,8 @@ export const projects: Project[] = [
     links: {
       github: 'https://github.com/TimsTittus/Audio-Adversarial-Attack-Generator'
     },
-    featured: true
+    featured: true,
+    imageUrl: '/projects/audio_adversarial.png'
   },
   {
     id: 11,
@@ -33,7 +34,8 @@ export const projects: Project[] = [
     links: {
       github: 'https://github.com/TimsTittus/MonkeyPen-Site'
     },
-    featured: true
+    featured: true,
+    imageUrl: '/projects/monkeypen.png'
   },
   {
     id: 12,
@@ -44,7 +46,8 @@ export const projects: Project[] = [
     links: {
       github: 'https://github.com/TimsTittus/Orvane'
     },
-    featured: true
+    featured: true,
+    imageUrl: '/projects/orvane.png'
   },
   {
     id: 4,
