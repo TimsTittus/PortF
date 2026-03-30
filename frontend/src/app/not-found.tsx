@@ -1,17 +1,19 @@
+"use client";
 
 import React, { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { HomeIcon } from 'lucide-react';
 
-const NotFound: React.FC = () => {
-  const location = useLocation();
+export default function NotFound() {
+  const pathname = usePathname();
 
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
-      location.pathname
+      pathname
     );
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <div className="flex flex-col items-center justify-center py-20 px-6 text-center">
@@ -28,7 +30,7 @@ const NotFound: React.FC = () => {
         The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
       </p>
 
-      <Link to="/" className="group relative inline-block w-full sm:w-auto">
+      <Link href="/" className="group relative inline-block w-full sm:w-auto">
         <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
         <div className="relative px-8 py-4 sm:px-10 sm:py-5 bg-nb-yellow border-4 border-nb-black text-nb-black font-black uppercase text-lg sm:text-xl flex items-center justify-center gap-3 hover:-translate-x-1 hover:-translate-y-1 transition-all">
           <HomeIcon className="group-hover:scale-110 transition-transform" strokeWidth={3} />
@@ -37,6 +39,4 @@ const NotFound: React.FC = () => {
       </Link>
     </div>
   );
-};
-
-export default NotFound;
+}

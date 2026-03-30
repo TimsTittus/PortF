@@ -1,3 +1,4 @@
 .qodo
 node_modules
 .env
+.next

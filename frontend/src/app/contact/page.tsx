@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, Github, Linkedin, Twitter } from 'lucide-react';
 import { toast } from 'sonner';
@@ -16,7 +18,7 @@ const initialFormState: FormState = {
   message: ''
 };
 
-const Contact: React.FC = () => {
+export default function ContactPage() {
   const [formData, setFormData] = useState<FormState>(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -200,6 +202,4 @@ const Contact: React.FC = () => {
       </section>
     </div>
   );
-};
-
-export default Contact;
+}

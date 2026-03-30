@@ -1,6 +1,12 @@
 import React from "react";
+import { Metadata } from 'next';
 
-const ResponsiveImageGallery = () => {
+export const metadata: Metadata = {
+    title: "Gallery | Tims Tittus",
+    description: "A glimpse into the fragments I’ve captured—projects, moments, and visuals.",
+};
+
+export default function GalleryPage() {
     return (
         <div className="bg-nb-cream py-12 min-h-screen">
             <div className="container mx-auto max-w-7xl px-4">
@@ -47,6 +53,4 @@ const ResponsiveImageGallery = () => {
             </div>
         </div>
     );
-};
-
-export default ResponsiveImageGallery;
+}

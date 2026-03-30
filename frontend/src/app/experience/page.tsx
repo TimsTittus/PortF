@@ -1,22 +1,22 @@
 import React from 'react';
 import { Building, Calendar, Award, BookOpen } from 'lucide-react';
-import SEO from '../components/layout/SEO';
-import SectionHeader from '../components/ui/SectionHeader';
-import { workExperience, volunteeringExperience } from '../data/experience';
-import { skills } from '../data/skills';
-import { education } from '../data/education';
+import SectionHeader from '@/components/ui/SectionHeader';
+import { workExperience, volunteeringExperience } from '@/data/experience';
+import { skills } from '@/data/skills';
+import { education } from '@/data/education';
+import { Metadata } from 'next';
 
-const Experience: React.FC = () => {
+export const metadata: Metadata = {
+  title: "Experience | Tims Tittus",
+  description: "A detailed overview of my professional journey, skills, and expertise.",
+};
+
+export default function ExperiencePage() {
   return (
     <div className="container mx-auto max-w-5xl">
-      <SEO 
-        title="Experience" 
-        description="A detailed overview of my professional journey, skills, and expertise."
-      />
-
       <section className="py-12">
-        <SectionHeader 
-          title="Experience" 
+        <SectionHeader
+          title="Experience"
           subtitle="A detailed overview of my professional journey, skills, and expertise."
         />
 
@@ -194,6 +194,4 @@ const Experience: React.FC = () => {
       </section>
     </div>
   );
-};
-
-export default Experience;
+}

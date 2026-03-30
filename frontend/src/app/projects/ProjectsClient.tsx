@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import SEO from '../components/layout/SEO';
-import ProjectCard from '../components/ui/ProjectCard';
-import SectionHeader from '../components/ui/SectionHeader';
-import { projects } from '../data/projects';
-import { achievements } from '../data/achievements';
+"use client";
 
-const Projects: React.FC = () => {
+import React, { useState } from 'react';
+import ProjectCard from '@/components/ui/ProjectCard';
+import SectionHeader from '@/components/ui/SectionHeader';
+import { projects } from '@/data/projects';
+import { achievements } from '@/data/achievements';
+
+export default function ProjectsClient() {
   const [activeFilter, setActiveFilter] = useState('All');
 
   const categories = [
@@ -23,31 +24,29 @@ const Projects: React.FC = () => {
     "description": a.description
   }));
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tims Tittus",
+    "url": "https://timstittus.vercel.app",
+    "sameAs": [
+      "https://github.com/TimsTittus",
+      "https://www.linkedin.com/in/tims-tittus/"
+    ],
+    "achievement": achievementsSchema
+  };
+
   return (
     <div className="container mx-auto max-w-6xl">
-      <SEO 
-        title="Projects & Achievements" 
-        description="A curated selection of my projects, skills, and achievements."
-      >
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Tims Tittus",
-            "url": "https://timstittus.vercel.app",
-            "sameAs": [
-              "https://github.com/TimsTittus",
-              "https://www.linkedin.com/in/tims-tittus/"
-            ],
-            "achievement": achievementsSchema
-          })}
-        </script>
-      </SEO>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <section className="py-12">
-        <SectionHeader 
-          title="My" 
-          highlight="Projects" 
+        <SectionHeader
+          title="My"
+          highlight="Projects"
           subtitle="A curated selection of my projects showcasing my skills in development, design, and problem-solving."
         />
 
@@ -75,8 +74,8 @@ const Projects: React.FC = () => {
       </section>
 
       <section className="py-24 border-t-4 border-nb-black mt-12" id="achievements">
-        <SectionHeader 
-          title="Achievements" 
+        <SectionHeader
+          title="Achievements"
           subtitle="A glimpse of milestones and recognitions I’ve earned along my journey."
         />
 
@@ -102,6 +101,4 @@ const Projects: React.FC = () => {
       </section>
     </div>
   );
-};
-
-export default Projects;
+}

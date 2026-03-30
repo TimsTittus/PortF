@@ -1,7 +1,6 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -38,7 +37,7 @@ const Footer: React.FC = () => {
                 {['Home', 'About', 'Contact'].map((item) => (
                   <li key={item}>
                     <Link
-                      to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                      href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
                       className="text-nb-black font-bold uppercase hover:text-nb-purple transition-colors underline decoration-2 underline-offset-4"
                     >
                       {item}

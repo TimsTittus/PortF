@@ -1,6 +1,8 @@
+"use client";
 
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -15,7 +17,7 @@ const navLinks = [
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +34,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <>
@@ -44,7 +46,7 @@ const Navbar: React.FC = () => {
       >
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-black tracking-tighter text-nb-black uppercase">
+            <Link href="/" className="text-2xl font-black tracking-tighter text-nb-black uppercase">
               Tims Tittus
             </Link>
 
@@ -54,10 +56,10 @@ const Navbar: React.FC = () => {
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.path}
+                      href={link.path}
                       className={`
                         transition-all duration-200 font-bold uppercase tracking-tight
-                        ${location.pathname === link.path ? 'text-nb-purple underline decoration-4 underline-offset-4' : 'text-nb-black hover:text-nb-purple'}
+                        ${pathname === link.path ? 'text-nb-purple underline decoration-4 underline-offset-4' : 'text-nb-black hover:text-nb-purple'}
                       `}
                     >
                       <span>{link.name}</span>
@@ -110,9 +112,9 @@ const Navbar: React.FC = () => {
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className={`block py-4 px-6 font-black uppercase text-xl border-4 border-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all active:shadow-none active:translate-x-[2px] active:translate-y-[2px]
-                      ${location.pathname === link.path ? 'bg-nb-purple text-nb-black underline decoration-4 underline-offset-4' : 'bg-white text-nb-black hover:bg-nb-yellow'}
+                      ${pathname === link.path ? 'bg-nb-purple text-nb-black underline decoration-4 underline-offset-4' : 'bg-white text-nb-black hover:bg-nb-yellow'}
                     `}
                   >
                     {link.name}

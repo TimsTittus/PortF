@@ -1,19 +1,16 @@
 import React from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import SEO from '../components/layout/SEO';
-import ProjectCard from '../components/ui/ProjectCard';
-import SectionHeader from '../components/ui/SectionHeader';
-import SkillGrid from '../components/home/SkillGrid';
-import { projects } from '../data/projects';
+import Link from 'next/link';
+import ProjectCard from '@/components/ui/ProjectCard';
+import SectionHeader from '@/components/ui/SectionHeader';
+import SkillGrid from '@/components/home/SkillGrid';
+import { projects } from '@/data/projects';
 
-const Home: React.FC = () => {
+export default function Home() {
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
     <div className="container mx-auto max-w-7xl">
-      <SEO />
-
       <section className="min-h-[80vh] flex flex-col justify-center pt-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12">
           <div className="lg:col-span-8 space-y-8">
@@ -31,7 +28,7 @@ const Home: React.FC = () => {
               I build secure, efficient solutions, blending coding, design, and cybersecurity skills as a modern polymath.
             </p>
             <div className="pt-8 flex flex-col sm:flex-row flex-wrap gap-6">
-              <Link to="/projects" className="group relative w-full sm:w-auto">
+              <Link href="/projects" className="group relative w-full sm:w-auto">
                 <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
                 <div className="relative px-8 py-4 bg-nb-purple border-4 border-nb-black text-nb-black font-black uppercase text-xl flex items-center justify-center gap-3 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all">
                   View my work
@@ -39,7 +36,7 @@ const Home: React.FC = () => {
                 </div>
               </Link>
 
-              <Link to="/contact" className="group relative w-full sm:w-auto">
+              <Link href="/contact" className="group relative w-full sm:w-auto">
                 <div className="absolute inset-0 bg-nb-black translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"></div>
                 <div className="relative px-8 py-4 bg-white border-4 border-nb-black text-nb-black font-black uppercase text-xl flex items-center justify-center gap-3 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all">
                   Get in touch
@@ -63,13 +60,13 @@ const Home: React.FC = () => {
 
       <section className="py-24 border-t-4 border-nb-black">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <SectionHeader 
-            title="Featured" 
-            highlight="Projects" 
+          <SectionHeader
+            title="Featured"
+            highlight="Projects"
             subtitle="Some of my recent work that defines my engineering journey."
             className="text-left"
           />
-          <Link to="/projects" className="group relative mb-6">
+          <Link href="/projects" className="group relative mb-6">
             <div className="absolute inset-0 bg-nb-black translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-all"></div>
             <div className="relative px-6 py-2 bg-nb-yellow border-2 border-nb-black font-black uppercase text-lg group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all">
               View All
@@ -85,15 +82,13 @@ const Home: React.FC = () => {
       </section>
 
       <section className="py-24 border-t-4 border-nb-black">
-        <SectionHeader 
-          title="Skills &" 
-          highlight="Expertise" 
+        <SectionHeader
+          title="Skills &"
+          highlight="Expertise"
           subtitle="Technologies and disciplines I've mastered over the years."
         />
         <SkillGrid />
       </section>
     </div>
   );
-};
-
-export default Home;
+}

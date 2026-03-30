@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Download } from 'lucide-react';
-import SEO from '../components/layout/SEO';
-import SectionHeader from '../components/ui/SectionHeader';
-import { services } from '../data/services';
-import { education } from '../data/education';
+import SectionHeader from '@/components/ui/SectionHeader';
+import { services } from '@/data/services';
+import { education } from '@/data/education';
 import {
   Carousel,
   CarouselContent,
@@ -11,15 +10,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Metadata } from 'next';
 
-const About: React.FC = () => {
+export const metadata: Metadata = {
+  title: "About | Tims Tittus",
+  description: "Learn about Tims Tittus, a full-stack developer, UI/UX designer, and public speaker with expertise in networking, web development, and cybersecurity.",
+};
+
+export default function AboutPage() {
   return (
     <div className="container mx-auto max-w-5xl">
-      <SEO 
-        title="About" 
-        description="Learn about Tims Tittus, a full-stack developer, UI/UX designer, and public speaker with expertise in networking, web development, and cybersecurity."
-      />
-
       <section className="py-12">
         <div className="flex flex-col md:flex-row gap-16 items-start w-full">
           <div className="md:w-1/3 sticky top-24">
@@ -55,9 +55,9 @@ const About: React.FC = () => {
           <div className="w-full md:w-2/3 min-w-0">
             <div className="space-y-16">
               <div>
-                <SectionHeader 
-                  title="About" 
-                  highlight="Me" 
+                <SectionHeader
+                  title="About"
+                  highlight="Me"
                   className="text-left mb-8 px-4 sm:px-0"
                   titleClassName="text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black"
                 />
@@ -129,6 +129,4 @@ const About: React.FC = () => {
       </section>
     </div>
   );
-};
-
-export default About;
+}
