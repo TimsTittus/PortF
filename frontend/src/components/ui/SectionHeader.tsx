@@ -8,12 +8,12 @@ interface SectionHeaderProps {
   titleClassName?: string;
 }
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({ 
-  title, 
-  highlight, 
-  subtitle, 
+const SectionHeader: React.FC<SectionHeaderProps> = ({
+  title,
+  highlight,
+  subtitle,
   className = "text-center mb-16 px-4",
-  titleClassName = "text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6"
+  titleClassName = "text-3xl sm:text-5xl md:text-8xl font-black uppercase tracking-tighter text-nb-black mb-6"
 }) => {
   return (
     <div className={className}>

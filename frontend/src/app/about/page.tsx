@@ -114,7 +114,7 @@ export default function AboutPage() {
               <div className="px-4 sm:px-0">
                 <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-nb-black mb-8">Education</h2>
                 <div className="space-y-8">
-                  {education.filter(edu => edu.title.includes("Higher") || edu.title.includes("Engineering")).map((edu) => (
+                  {education.filter(edu => edu.title.includes("Higher") || edu.title.includes("Engineering") || edu.title.includes("Honors")).map((edu) => (
                     <div key={edu.title} className={`p-6 sm:p-8 bg-white border-4 border-nb-black ${edu.color} shadow-nb-hard`}>
                       <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{edu.title}</h3>
                       <p className="text-nb-purple font-black uppercase text-sm mt-1">{edu.loc}</p>

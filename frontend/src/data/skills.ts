@@ -1,35 +1,79 @@
 export interface Skill {
   name: string;
-  level: number;
 }
 
 export interface SkillsData {
-  technical: Skill[];
+  programming: Skill[];
+  web: Skill[];
+  database: Skill[];
+  security: Skill[];
+  tools: Skill[];
   design: Skill[];
   soft: Skill[];
 }
 
 export const skills: SkillsData = {
-  technical: [
-    { name: 'JavaScript', level: 90 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'React', level: 90 },
-    { name: 'HTML/CSS', level: 95 },
-    { name: 'Node.js', level: 75 },
-    { name: 'Git', level: 85 }
+  programming: [
+    { name: 'C' },
+    { name: 'Java' },
+    { name: 'Python' },
+    { name: 'JavaScript' },
+    { name: 'TypeScript' }
+  ],
+  web: [
+    { name: 'HTML5' },
+    { name: 'CSS' },
+    { name: 'React' },
+    { name: 'Next.js' },
+    { name: 'Node.js' },
+    { name: 'Vite' },
+    { name: 'Vue.js' },
+    { name: 'ExpressJS' },
+    { name: 'Tailwind CSS' },
+    { name: 'Shadcn UI' },
+  ],
+  database: [
+    { name: 'MySQL' },
+    { name: 'MongoDB' },
+    { name: 'PostgreSQL' },
+    { name: 'Firebase' },
+    { name: 'Supabase' },
+    { name: 'Redis' },
+  ],
+  security: [
+    { name: 'Kali Linux' },
+    { name: 'Nmap' },
+    { name: 'Wireshark' },
+    { name: 'Burpsuite' },
+    { name: 'Metasploit' },
+    { name: 'Aircrack NG' },
+    { name: 'Zphisher' },
+    { name: 'Setoolkit' },
+    { name: 'Tor' },
+    { name: 'Tor Project' },
+    { name: 'HackTheBox' },
+
+  ],
+  tools: [
+    { name: 'Git' },
+    { name: 'GitHub' },
+    { name: 'Docker' },
+    { name: 'LaTex' },
+    { name: 'Markdown' }
   ],
   design: [
-    { name: 'UI Design', level: 95 },
-    { name: 'UX Research', level: 75 },
-    { name: 'Figma/Sketch', level: 85 },
-    { name: 'Responsive Design', level: 90 }
+    { name: 'Adobe Photoshop' },
+    { name: 'Figma' },
+    { name: 'Canva' },
+    { name: 'Adobe Lightroom' },
+    { name: 'Notion' }
   ],
   soft: [
-    { name: 'Communication', level: 100 },
-    { name: 'Problem Solving', level: 85 },
-    { name: 'Team Collaboration', level: 95 },
-    { name: 'Time Management', level: 90 },
-    { name: 'Adaptability', level: 90 }
+    { name: 'Communication' },
+    { name: 'Problem Solving' },
+    { name: 'Team Collaboration' },
+    { name: 'Time Management' },
+    { name: 'Adaptability' }
   ]
 };
 

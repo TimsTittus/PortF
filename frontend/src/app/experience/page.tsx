@@ -6,6 +6,23 @@ import { skills } from '@/data/skills';
 import { education } from '@/data/education';
 import { Metadata } from 'next';
 
+const SkillTag = ({ name, color }: { name: string; color: string }) => (
+  <div className={`px-3 py-1.5 ${color} border-2 border-nb-black font-black uppercase text-xs sm:text-sm shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all text-nb-black`}>
+    {name}
+  </div>
+);
+
+const SkillCategory = ({ title, items, color, className = "" }: { title: string; items: any[]; color: string; className?: string }) => (
+  <div className={`p-6 sm:p-8 bg-white border-4 border-nb-black shadow-nb-hard h-full ${className}`}>
+    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-8 text-nb-black underline decoration-8 decoration-nb-purple underline-offset-4">{title}</h3>
+    <div className="flex flex-wrap gap-3">
+      {items.map((skill) => (
+        <SkillTag key={skill.name} name={skill.name} color={color} />
+      ))}
+    </div>
+  </div>
+);
+
 export const metadata: Metadata = {
   title: "Experience | Tims Tittus",
   description: "A detailed overview of my professional journey, skills, and expertise.",
@@ -39,9 +56,11 @@ export default function ExperiencePage() {
                   <div className="flex flex-col md:flex-row md:items-start gap-8">
                     <div className="md:w-1/3">
                       <h3 className="text-3xl font-black uppercase tracking-tight text-nb-black">{job.title}</h3>
-                      <div className="flex items-center text-nb-purple font-black uppercase text-sm mt-3">
-                        <Building size={18} className="mr-2" strokeWidth={3} />
-                        <span>{job.company}</span>
+                      <div className="flex items-center font-black uppercase text-xs mt-3 gap-2">
+                        <div className="px-3 py-1 bg-nb-purple border-2 border-nb-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-nb-black flex items-center gap-2">
+                          <Building size={14} strokeWidth={3} />
+                          <span>{job.company}</span>
+                        </div>
                       </div>
                       <div className="flex items-center text-nb-black/60 font-bold text-sm mt-2">
                         <Calendar size={18} className="mr-2" strokeWidth={3} />
@@ -87,9 +106,11 @@ export default function ExperiencePage() {
                   <div className="flex flex-col md:flex-row md:items-start gap-8">
                     <div className="md:w-1/3">
                       <h3 className="text-2xl font-black uppercase tracking-tight text-nb-black">{job.title}</h3>
-                      <div className="flex items-center text-nb-green font-black uppercase text-sm mt-3">
-                        <Building size={18} className="mr-2" strokeWidth={3} />
-                        <span>{job.company}</span>
+                      <div className="flex items-center font-black uppercase text-xs mt-3 gap-2">
+                        <div className="px-3 py-1 bg-nb-green border-2 border-nb-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-nb-black flex items-center gap-2">
+                          <Building size={14} strokeWidth={3} />
+                          <span>{job.company}</span>
+                        </div>
                       </div>
                       <div className="flex items-center text-nb-black/60 font-bold text-sm mt-2">
                         <Calendar size={18} className="mr-2" strokeWidth={3} />
@@ -119,53 +140,33 @@ export default function ExperiencePage() {
             <div className="p-2 sm:p-3 bg-nb-yellow border-4 border-nb-black shadow-nb-hard mr-4 sm:mr-6">
               <Award className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={3} />
             </div>
-            Skills & Expertise
+            Tech Stack & Skills
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="p-6 sm:p-8 bg-white border-4 border-nb-black shadow-nb-hard">
-              <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-8 text-nb-black underline decoration-8 decoration-nb-purple underline-offset-4">Technical</h3>
-              <div className="space-y-8">
-                {skills.technical.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2 font-black uppercase tracking-tight text-lg">
-                      <span>{skill.name}</span>
-                      <span>{skill.level}%</span>
-                    </div>
-                    <div className="h-6 bg-nb-cream border-4 border-nb-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                      <div
-                        className="h-full bg-nb-purple border-r-4 border-nb-black"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="space-y-16">
+            {/* Programming & Web */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <SkillCategory title="Programming" items={skills.programming} color="bg-nb-purple" />
+              <SkillCategory title="Web Development" items={skills.web} color="bg-nb-blue" />
             </div>
 
-            <div className="space-y-12">
-              <div className="p-6 sm:p-8 bg-white border-4 border-nb-black shadow-nb-hard">
-                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-6 text-nb-black underline decoration-8 decoration-nb-yellow underline-offset-4">Design</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {skills.design.map((skill) => (
-                    <div key={skill.name} className="p-4 bg-nb-yellow border-2 border-nb-black font-black uppercase text-xs text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                      {skill.name} - {skill.level}%
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* Security */}
+            <SkillCategory
+              title="Cybersecurity & Tools"
+              items={skills.security}
+              color="bg-nb-pink"
+              className="w-full"
+            />
 
-              <div className="p-6 sm:p-8 bg-white border-4 border-nb-black shadow-nb-hard">
-                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight mb-6 text-nb-black underline decoration-8 decoration-nb-green underline-offset-4">Soft Skills</h3>
-                <div className="flex flex-wrap gap-3">
-                  {skills.soft.map((skill) => (
-                    <div key={skill.name} className="px-4 py-2 bg-nb-green border-2 border-nb-black font-black uppercase text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                      {skill.name}
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* Database, Tools, Design */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <SkillCategory title="Databases" items={skills.database} color="bg-nb-green" />
+              <SkillCategory title="Tools & DevOps" items={skills.tools} color="bg-nb-yellow" />
+              <SkillCategory title="Design" items={skills.design} color="bg-nb-purple" />
             </div>
+
+            {/* Soft Skills */}
+            <SkillCategory title="Soft Skills" items={skills.soft} color="bg-nb-green" />
           </div>
         </div>
 
